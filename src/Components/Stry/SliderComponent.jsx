@@ -262,7 +262,7 @@ const SliderComponent = () => {
               gsap.set(title, {
                 skewX: `${proxy.velocity * 5}deg`,
                 x:
-                  (-scrollPerc / 100) * (title.offsetWidth - window.innerWidth),
+                (-scrollPerc / 100) * (title.offsetWidth - window.innerWidth),
               });
             },
           });
