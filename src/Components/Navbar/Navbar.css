@@ -150,7 +150,7 @@
    }
    
    .nav-menu li{
-       font-size: 72px;
+       font-size: 36px;
        font-weight: bold;
    }
    .tedx-logo{
@@ -168,7 +168,7 @@
   
    flex-direction: column;
    z-index: 777;
-   background-color: rgba(236, 8, 8, 0.808);
+   background-color: rgba(0, 0, 0, 0.912);
   transform: translateY(-4%);
    max-height: 150vh; /* Adjust the max-height based on your content */
    opacity: 1;
