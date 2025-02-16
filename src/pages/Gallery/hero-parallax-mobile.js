@@ -6,6 +6,7 @@ import {
   useTransform,
   useSpring,
 } from "framer-motion";
+import React from "react";
 
 export const HeroParallax2 = ({ products }) => {
   const firstRow = products.slice(0,5);
@@ -30,7 +31,10 @@ export const HeroParallax2 = ({ products }) => {
     useTransform(scrollYProgress, [0, 1], [-100, 1200]),
     springConfig
   );
-
+  const translateX6 = useSpring(
+    useTransform(scrollYProgress, [0, 1], [2000, -100]),
+    springConfig
+  );
   useEffect(() => {
     const updateHeight = () => {
       if (window.innerWidth === 375) {
@@ -158,7 +162,7 @@ export const HeroParallax2 = ({ products }) => {
           {sixthRow.map((product) => (
             <ProductCard
               product={product}
-              translate={translateXFIFTH}
+              translate={translateX6}
               key={product.title}
             />
           ))}
