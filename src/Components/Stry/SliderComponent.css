@@ -191,6 +191,7 @@ z-index: 0;
   color: #fff;
   font-size: 92px;
 }
+
 .logos {
   position: relative;
   display: flex;
@@ -237,6 +238,7 @@ z-index: 0;
     background: linear-gradient(180deg, #0900FF 0%, #F200FF 100%);
     transition: width 0.1s ease-out;
   }
+
 
 .year-drop {
   position: fixed;
@@ -307,7 +309,9 @@ z-index: 0;
 
 /*images style pc:- 2023 */
 
-
+.Prateek .speaker-name{
+  font-size: 65px;
+}
 
 
 
@@ -352,6 +356,11 @@ z-index: 0;
     font-size: 45px;
     line-height: 45px;
 }
+.Prateek .speaker-name{
+  font-size: 45px;
+  line-height: 45px;
+}
+
   
  
 }
@@ -384,6 +393,10 @@ z-index: 0;
       }
       .sripc .speaker-name {
         font-size: 36px;
+        line-height: 36px;
+    }
+    .Prateek .speaker-name{
+      font-size: 36px;
         line-height: 36px;
     }
 }
