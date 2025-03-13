@@ -826,6 +826,8 @@
                 "IQ":80,
                 "humour":80,
                 "anger":30,
+                "humour":80,
+                "anger":30,
                 "fun": 46,
                 "ln":"https://www.linkedin.com/in/anand-mridul-mishra-166851311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             },{
@@ -951,18 +953,6 @@
                 "anger":90,
                 "fun": 46,
                 "ln":"https://www.linkedin.com/in/zoha-fatima-91994b2b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            },{
-                "id": "organisers",
-                "name": "Mahima",
-                "info": "TEDxDAVV",
-                "image": "https://imgur.com/qYbOysl.jpeg",
-                "ig": "https://www.instagram.com/mahimasisodiaa/profilecard/?igsh=MXZpd25rMDgzNDBuYQ==",
-                "cuteness":60,
-                "IQ":80,
-                "humour":20,
-                "anger":90,
-                "fun": 46,
-                "ln":"https://www.linkedin.com/in/mahima-sisodiya-1a5a512b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
             },
             {
                 "id": "sponsorship",
@@ -1034,6 +1024,18 @@
                 "info": "TEDxDAVV",
                 "image": "https://imgur.com/uQeXMCY.jpeg",
                 "ig": "https://www.instagram.com/swapnil.khare5?igsh=MXFwcDByYm43N2FiZg==",
+                "cuteness":60,
+                "IQ":80,
+                "humour":20,
+                "anger":90,
+                "fun": 46,
+                "ln":""
+            },{
+                "id": "sponsorship",
+                "name": "Saharsh ",
+                "info": "TEDxDAVV",
+                "image": "https://imgur.com/WLyJd8C.jpeg",
+                "ig": "https://www.instagram.com/_.saransh._73?igsh=MXB4Z2xibW1janEyZw==",
                 "cuteness":60,
                 "IQ":80,
                 "humour":20,

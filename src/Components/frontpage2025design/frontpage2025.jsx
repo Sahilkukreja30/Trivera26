@@ -5,6 +5,9 @@ import "./frontpage2025.css";
 import SideMarquee2 from "../../2025-Components/sidemarquee2/sidemarquee2";
 import TypePara from "../../2025-Components/TypePara/TypePara";
 import TypePara2 from "../../2025-Components/typepara2/typepara2";
+import { ReactComponent as NumberSvg } from "../Assests/Images/Group 104.svg";
+import { ReactComponent as Cultural } from "../Assests/Images/Group 106.svg";
+import { ReactComponent as SPEAKERS } from "../Assests/Images/Group 105.svg";
 
 const debounce = (func, wait) => {
   let timeout;
@@ -25,6 +28,8 @@ const FrontPage2025 = ({ onScaleComplete }) => {
   const taglineRef = useRef();
   const lineOverlayRef = useRef();
   const zeroRef = useRef();
+  const culturalRef = useRef();
+  const speakersRef = useRef();
   const [visibleTexts, setVisibleTexts] = useState([false, false, false, false]);
 
   useEffect(() => {
@@ -74,7 +79,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       { scale: 1, opacity: 1, duration: 1.5, ease: "power2.out" }
     );
 
-    // Animate year container first (without the "11")
+    // Animate year container first (without the "11", cultural, and speakers)
     timeline.fromTo(
       yearRef.current,
       { scale: 0.5, opacity: 0 },
@@ -82,21 +87,16 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       "<"
     );
 
-    // Hide "11" initially
+    // Hide "zero", cultural, and speakers containers initially
     gsap.set(yearRef.current.querySelector(".zero"), { opacity: 0 });
+    gsap.set(culturalRef.current, { opacity: 0 });
+    gsap.set(speakersRef.current, { opacity: 0 });
     
-    // Animate "11" separately
+    // Animate "zero", cultural, and speakers containers together
     timeline.to(
-      yearRef.current.querySelector(".zero"),
+      [yearRef.current.querySelector(".zero"), culturalRef.current, speakersRef.current],
       { opacity: 1, duration: 0.5, ease: "power2.out" },
       "+=0.5"
-    );
-
-    // Continue with normal animation sequence
-    timeline.to(
-      yearRef.current.querySelector(".zero"),
-      { opacity: 0.6, duration: 0.5, ease: "power2.out" },
-      "-=0.5"
     );
 
     // Add initial state for line-overlay
@@ -152,7 +152,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
     const xOffset = zeroBounds.left + zeroBounds.width / 2 - (containerBounds.left + containerBounds.width / 2);
     const yOffset = zeroBounds.top + zeroBounds.height / 2 - (containerBounds.top + containerBounds.height / 2);
     const leftOffset = 0;
-
+   
     // Original zoom animation
     timeline.to(containerRef.current, {
       scale: 30,
@@ -186,16 +186,23 @@ const FrontPage2025 = ({ onScaleComplete }) => {
 
   return (
     <div className="main-container25">
-       <SideMarquee2 isRight={true} />
+      <SideMarquee2 isRight={true} />
       <div ref={containerRef} className="frontpage-container25">
-       
         <div className="landing_2025_stars"></div>
         <div ref={lineOverlayRef} className="line-overlay25"></div>
         <div className="year-container25">
           <span ref={yearRef} className="year25">
+            <div ref={culturalRef} className="cultural-container">
+              <Cultural />
+            </div>
             <p className="month">MARCH</p>
-            <span ref={zeroRef} className="zero">29</span>
+            <span ref={zeroRef} className="zero">
+              <NumberSvg />
+            </span>
             <span className="full-year">2025</span>
+            <div ref={speakersRef} className="speakers-container">
+              <SPEAKERS/>
+            </div>
           </span>
         </div>
         <div className="tagline-container25" ref={taglineRef}>

@@ -57,11 +57,11 @@
   display: inline-grid;
   flex-direction: column; /* Stack elements vertically */
   align-items: center; /* Center-align text */
-  gap: 2rem; /* Add spacing between lines */
+  gap: 0.5rem; /* Add spacing between lines */
 }
 
 .text25 {
-  font-size: 15px;
+  font-size: 14px;
   color: #ccc;
   max-width: 200px;
   opacity: 1;
@@ -76,12 +76,15 @@
   position: absolute;
   top: 55%;
   left: 48%;
+  top: 55%;
+  left: 48%;
   transform: translate(-50%, -50%);
   background-color: black;
   z-index: 2;
 }
 
 .year25 {
+  font-family: 'Protomolecule-regular', sans-serif !important;
   font-family: 'Protomolecule-regular', sans-serif !important;
   color: #fff;
   letter-spacing: 1.5rem;
@@ -92,6 +95,7 @@
   justify-content: center;
   gap: 0.5rem;
  top: 50%;
+ top: 50%;
 }
 .text2{
   position: relative;
@@ -101,26 +105,62 @@
   font-family: 'Protomolecule-regular';
   font-size: 7rem;
   letter-spacing: 0.5rem;
-  line-height: 1.8;
+  line-height: 1.4;
+  opacity: 0.6;
 }
 .zero {
+  font-size: 18rem;
   font-size: 18rem;
   transition: opacity 1s ease-out;
   letter-spacing: 0rem;
   line-height: 1;
 }
+/* In your CSS file */
+.zero svg {
+  width: 19rem;
+  height: 19rem;
+}
 .full-year{
   font-size: 7rem;
   position: relative;
   letter-spacing: 2rem;
-  line-height: 3.9;
+  line-height: 3.8;
   font-weight: 800;
+  opacity: 0.6;
 }
+
+.cultural-container {
+  position: absolute;
+  left: 160px;
+  top: 24%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.cultural-container svg {
+  width: 16rem;
+  height: 16rem;
+}
+
+.speakers-container {
+  position: absolute;
+  right: 110px;
+  top: -55px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.speakers-container svg{
+  width: 16rem;
+  height: 16rem;
+}
+
 .tagline-container25 {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  top: 90%;
   top: 90%;
   transform: translateY(-50%);
   width: 100%;
@@ -129,6 +169,7 @@
 
 .tagline25 {
   position: relative;
+  font-size: 30px;
   font-size: 30px;
   padding: 5px 15px;
   background-color: black;
@@ -141,7 +182,9 @@
 .line-overlay25 {
   position: absolute;
   top: 90%;
+  top: 90%;
   left: 0;
+  right: 45px;
   right: 45px;
   height: 2px;
   background: white;
@@ -156,18 +199,25 @@
 
 .blinking25 {
   animation: blink25 2.8s ease-in-out;
+  animation: blink25 2.8s ease-in-out;
 }
 
 /* Media Queries for Responsiveness */
+
 
 
 @media (max-width: 1080px) {
   .text25 {
     font-size: 10px;
     width: 60%;
+    font-size: 10px;
+    width: 60%;
   }
   .text2 {
     left: -130px;
+  }
+  .year-container25{
+    top:60%
   }
   .month {
     font-size: 5.5rem;
@@ -177,6 +227,18 @@
     font-size: 14rem;
     letter-spacing: 0;
   }
+  .zero svg {
+    width: 15rem;
+    height: 15rem;
+  }
+  .speakers-container svg{
+    width: 14rem;
+    height: 14rem;
+  }
+  .cultural-container svg {
+    width: 14rem;
+    height: 14rem;
+  }
   .full-year {
     font-size: 5.5rem;
     letter-spacing: 1.5rem;
@@ -185,13 +247,28 @@
   .tagline25 {
     font-size: 30px;
   }
+  .cultural-container {
+    left: 115px;
+    top: 23%;
+  }
+  .speakers-container {
+    right: 70px;
+    top: -70px;
+  }
 }
 
 @media (max-width: 960px) {
   .text25 {
     font-size: 12px;
     width: 75%;
+    width: 75%;
   }
+  .month {
+    font-size: 4.5rem;
+    letter-spacing: 0.3rem;
+  }
+  .zero {
+    font-size: 12rem;}
   .month {
     font-size: 4.5rem;
     letter-spacing: 0.3rem;
@@ -211,13 +288,32 @@
     gap: 2%;
     padding: 10px;
   }
+  .combined-column25{
+    gap: 2rem;
+  }
+  .year-container25{
+    top:55%
+  }
   .text25 {
     font-size: 10px;
+    width: 50%;
     width: 50%;
   }
   .text2 {
     left: -100px;
   }
+  .month {
+    font-size: 3.5rem;
+    letter-spacing: 0.2rem;
+  }
+  .zero {
+    font-size: 10rem;
+  }
+  .full-year {
+    font-size: 3.5rem;
+    letter-spacing: 1rem;
+    line-height: 3;
+    top: 30px; }
   .month {
     font-size: 3.5rem;
     letter-spacing: 0.2rem;
@@ -237,6 +333,26 @@
   .line-overlay25 {
     display: none;
   }
+  .zero svg {
+    width: 10rem;
+    height: 10rem;
+  }
+  .speakers-container svg{
+    width: 9rem;
+    height: 9rem;
+  }
+  .cultural-container svg {
+    width: 9rem;
+    height: 9rem;
+  }
+  .cultural-container {
+    left: 65px;
+    top: 27%;
+  }
+  .speakers-container {
+    right: 55px;
+    top: -50px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -246,6 +362,7 @@
   }
   .text25 {
     font-size: 6px;
+    width: 50%;
     width: 50%;
   }
   .text2 {
@@ -265,14 +382,51 @@
     letter-spacing: 0.8rem;
     line-height: 3;
     position: relative;
+    top: 20px; /* Added to move the full-year down in mobile view */}
+
+  .month {
+    font-size: 2.5rem;
+    letter-spacing: 0.15rem;
+    line-height: 1.8;
+  }
+  .zero {
+    font-size: 7rem;
+    line-height: 1;
+  }
+  .full-year {
+    font-size: 2.5rem;
+    letter-spacing: 0.8rem;
+    line-height: 3;
+    position: relative;
     top: 20px; /* Added to move the full-year down in mobile view */
   }
   .tagline25 {
+    font-size: 20px;
     font-size: 20px;
   }
   .year-container25 {
     left: 51%;
     top: 50%;
+  }
+  .zero svg {
+    width: 7rem;
+    height: 7rem;
+  }
+  .speakers-container svg{
+    width: 6rem;
+    height: 6rem;
+  }
+  .cultural-container svg {
+    width: 6rem;
+    height: 6rem;
+  }
+  .cultural-container {
+    left: 55px;
+    top: 30%;
+  }
+  .speakers-container {
+    right: 50px;
+    top: -30px;
   }
 }
 
@@ -301,5 +455,24 @@
   .tagline25 {
     font-size: 15px;
   }
+  .zero svg {
+    width: 6rem;
+    height: 6rem;
+  }
+  .speakers-container svg{
+    width: 5rem;
+    height: 5rem;
+  }
+  .cultural-container svg {
+    width: 5rem;
+    height: 5rem;
+  }
+  .cultural-container {
+    left: 40px;
+    top: 35%;
+  }
+  .speakers-container {
+    right: 35px;
+    top: -25px;
+  }
 }
-
