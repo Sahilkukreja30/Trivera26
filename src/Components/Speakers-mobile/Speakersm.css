@@ -286,6 +286,18 @@ padding-top: 3vh;
 .Rahul .lin{
     left: 42%;
 }
+.mHiten .lin{
+    left: 12%;
+}
+.mShreya .lin{
+    left: 45%;
+}
+.mPrateek .lin{
+    left: 51%;
+}
+.mKayden .lin{
+    left: 36%;
+}
 
  @media(max-width:550px){
   .o-mslider{
@@ -330,7 +342,19 @@ padding-top: 3vh;
 .maryan-style .lin{
     left: 51%;
 }
-
+.mHiten .mSpeaker-name{
+    right: -65vw !important;
+}
+.mPrateek .mSpeaker-name{
+    font-size: 24px;
+    line-height: 30px;
+}
+.mPrateek .mSpeaker-name{
+    right: -60vw;
+}
+.mPrateek .lin{
+    left: 42%;
+}
 
 .mreveal .mSpeaker-name{
     font-size: 21px;

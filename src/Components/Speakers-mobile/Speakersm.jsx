@@ -10,11 +10,51 @@ import badal from "../Assests/Images/Group 29.png";
 
 const speakers2025 = [
   {
+    name: "Hiten",
+    surname: "Lulla",
+    designation: "Tech Educator, Software Engineer & Content Creator",
+    description:
+      "Hiten Lulla, founder of Hiten.Codes, simplifies coding through engaging tech education. A YouTube creator and GitHub contributor, he empowers learners by making technology accessible and fun.",
+    image: "https://imgur.com/aiwzOhi.png",
+    instagramLink: "https://www.instagram.com/hiten.codes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    linkedinLink: "https://www.linkedin.com/in/hiten-lulla-a434201aa/?originalSubdomain=in",
+  },
+  {
+    name: "Shreya",
+    surname: "Mahendru",
+    designation: "Digital Nomad & Content Creator",
+    description:
+      "Shreya Mahendru inspires remote work and travel through Instagram and YouTube. She shares freelancing insights to help others embrace a location-independent lifestyle.",
+    image: "https://imgur.com/Dpwk6oF.png",
+    instagramLink: "https://www.instagram.com/shreyamahendru_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    linkedinLink: "https://www.linkedin.com/in/shreyamahendru/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in",
+  },
+  {
+    name: "Dr. Prateek",
+    surname: "Makwana",
+    designation: "Consultant Embryologist & Sexual Health Expert",
+    description:
+      "Dr. Prateek Makwana leads Vasundhara Hospital Ltd. and Vasundhara IVF. He educates the public through Medical Scribbles, TEDx, and social media, simplifying fertility and sexual health topics for informed decision-making.",
+    image: "https://imgur.com/Z32CbN5.png",
+    instagramLink: "https://www.instagram.com/fertility_scribbles?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    linkedinLink: "https://www.linkedin.com/in/dr-prateek-makwana-10132a18b/?originalSubdomain=in",
+  },
+  {
+    name: "Kayden",
+    surname: "Anthony",
+    designation: "Wildlife Conservationist & Storyteller",
+    description:
+      "Kayden Anthony, The Man of the Forest, turns wildlife conservation into a fun, engaging journey. Through storytelling, he educates and inspires communities to protect nature with fresh, playful insights.",
+    image: "https://imgur.com/TID0bLe.png",
+    instagramLink: "https://www.instagram.com/man_of_the_forest_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    linkedinLink: "https://www.linkedin.com/in/kayden-anthony/?originalSubdomain=in",
+  },
+  {
     name: "Coming",
     surname: "Soon",
     designation: "TEDxDAVV: Where Ideas Come Alive",
     description:
-      "Get ready for inspiring talks from innovative speakers at TEDxDAVV! Their stories and ideas will ignite meaningful conversations. Don’t miss out on this unforgettable experience!",
+      "This is just the beginning. We have more incredible speakers to reveal, each bringing fresh ideas and powerful stories. Stay tuned! Big announcements are on the way.",
     image: coming,
     instagramLink: "",
     linkedinLink: "",
@@ -468,6 +508,25 @@ const Speakersm = () => {
                   speakerClass = "";
               }
               break;
+              case "2025":
+              // Add switch cases for 2024 here
+              switch (speaker.name) {
+                case "Hiten":
+                  speakerClass = "mHiten";
+                  break;
+                case "Shreya":
+                  speakerClass = "mShreya";
+                  break;
+                case "Dr. Prateek": 
+                  speakerClass = "mPrateek";
+                  break;
+                case "Kayden":
+                  speakerClass = "mKayden";
+                  break;
+                default:
+                    speakerClass = "";
+                }
+                  break;
             default:
               speakerClass = "";
           }

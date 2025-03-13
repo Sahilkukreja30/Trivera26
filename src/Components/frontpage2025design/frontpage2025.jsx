@@ -2,10 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./frontpage2025.css";
-import About from "../../2025-Components/About/About";
 import SideMarquee2 from "../../2025-Components/sidemarquee2/sidemarquee2";
 import TypePara from "../../2025-Components/TypePara/TypePara";
 import TypePara2 from "../../2025-Components/typepara2/typepara2";
+import { ReactComponent as NumberSvg } from "../Assests/Images/Group 104.svg";
+import { ReactComponent as Cultural } from "../Assests/Images/Group 106.svg";
+import { ReactComponent as SPEAKERS } from "../Assests/Images/Group 105.svg";
+
 
 const debounce = (func, wait) => {
   let timeout;
@@ -24,6 +27,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
   const textRefs = useRef([]);
   const yearRef = useRef();
   const taglineRef = useRef();
+  const lineOverlayRef = useRef();
   const zeroRef = useRef();
   const [visibleTexts, setVisibleTexts] = useState([false, false, false, false]);
 
@@ -34,10 +38,24 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       ScrollTrigger.refresh();
     }, 250);
 
-    // Function to get scroll distance based on screen width
     const getScrollDistance = () => {
-      return window.innerWidth <= 768 ? 1000 : 2000; // 768px is a common mobile breakpoint
+      return window.innerWidth <= 768 ? 1000 : 2000;
     };
+
+    // Setup blinking letters effect
+    const letters = document.querySelectorAll(".tagline-letter25");
+    const addBlinkingEffect = debounce(() => {
+      letters.forEach((letter) => {
+        const shouldBlink = Math.random() > 0.6;
+        if (shouldBlink) {
+          letter.classList.add("blinking25");
+        } else {
+          letter.classList.remove("blinking25");
+        }
+      });
+    }, 250);
+
+    const blinkingInterval = setInterval(addBlinkingEffect, 3000);
 
     const timeline = gsap.timeline({
       scrollTrigger: {
@@ -47,19 +65,20 @@ const FrontPage2025 = ({ onScaleComplete }) => {
         scrub: true,
         pin: true,
         onLeave: debounce(() => onScaleComplete && onScaleComplete(), 250),
-        // Update end value on resize
         onRefresh: (self) => {
           self.end = `+=${getScrollDistance()}`;
         },
       },
     });
 
+    // Initial container animation
     timeline.fromTo(
       containerRef.current,
       { scale: 0.8, opacity: 0 },
       { scale: 1, opacity: 1, duration: 1.5, ease: "power2.out" }
     );
 
+    // Animate year container first (without the "11")
     timeline.fromTo(
       yearRef.current,
       { scale: 0.5, opacity: 0 },
@@ -67,14 +86,29 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       "<"
     );
 
+    // Hide "11" initially
+    gsap.set(yearRef.current.querySelector(".zero"), { opacity: 0 });
+    
+    // Animate "11" separately
     timeline.to(
       yearRef.current.querySelector(".zero"),
-      { opacity: 0.5, duration: 0.5, ease: "power2.out" },
+      { opacity: 1, duration: 0.5, ease: "power2.out" },
+      "+=0.5"
+    );
+
+    // Continue with normal animation sequence
+    timeline.to(
+      yearRef.current.querySelector(".zero"),
+      { opacity: 1, duration: 0.5, ease: "power2.out" },
       "-=0.5"
     );
 
+    // Add initial state for line-overlay
+    gsap.set(lineOverlayRef.current, { opacity: 0 });
+
+    // Animate tagline and line-overlay together
     timeline.fromTo(
-      taglineRef.current,
+      [taglineRef.current, lineOverlayRef.current],
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
       "+=0.5"
@@ -108,8 +142,9 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       );
     });
 
+    // Fade out tagline and line-overlay together
     timeline.to(
-      [taglineRef.current, ...textRefs.current],
+      [taglineRef.current, lineOverlayRef.current, ...textRefs.current],
       { opacity: 0, duration: 1, ease: "power2.out" },
       "+=0.5"
     );
@@ -120,8 +155,9 @@ const FrontPage2025 = ({ onScaleComplete }) => {
 
     const xOffset = zeroBounds.left + zeroBounds.width / 2 - (containerBounds.left + containerBounds.width / 2);
     const yOffset = zeroBounds.top + zeroBounds.height / 2 - (containerBounds.top + containerBounds.height / 2);
-    const leftOffset = 40;
+    const leftOffset = 0;
 
+    // Original zoom animation
     timeline.to(containerRef.current, {
       scale: 30,
       opacity: 0,
@@ -133,7 +169,6 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       }, 250),
     });
 
-    // Handle resize events
     const handleResize = () => {
       debouncedRefresh();
       ScrollTrigger.getAll().forEach(trigger => {
@@ -143,47 +178,42 @@ const FrontPage2025 = ({ onScaleComplete }) => {
     };
 
     window.addEventListener("resize", handleResize);
-
     ScrollTrigger.refresh();
     
     return () => {
       window.removeEventListener("resize", handleResize);
+      clearInterval(blinkingInterval);
       timeline.kill();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, [onScaleComplete]);
 
-  useEffect(() => {
-    const letters = document.querySelectorAll(".tagline-letter25");
-    const addBlinkingEffect = debounce(() => {
-      letters.forEach((letter) => {
-        const shouldBlink = Math.random() > 0.8;
-        if (shouldBlink) {
-          letter.classList.add("blinking25");
-        } else {
-          letter.classList.remove("blinking25");
-        }
-      });
-    }, 250);
-
-    const interval = setInterval(addBlinkingEffect, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="main-container25">
+       <SideMarquee2 isRight={true} />
       <div ref={containerRef} className="frontpage-container25">
-        <SideMarquee2 />
+       
         <div className="landing_2025_stars"></div>
-        <div className="line-overlay25"></div>
+        <div ref={lineOverlayRef} className="line-overlay25"></div>
         <div className="year-container25">
           <span ref={yearRef} className="year25">
-            2&nbsp;<span ref={zeroRef} className="zero">0</span>&nbsp;2&nbsp;5
+          <div className="cultural-container">
+          <Cultural />
+          </div>
+            <p className="month">MARCH</p>
+            <span ref={zeroRef} className="zero">
+              <NumberSvg />
+            </span>
+            <span className="full-year">2025</span>
+            <div className="speakers-container">
+            <SPEAKERS/>
+            </div>
           </span>
+         
         </div>
         <div className="tagline-container25" ref={taglineRef}>
           <div className="tagline25">
-            {Array.from("THE DATE AWAITS, BUT THE EXCITEMENT STARTS NOW").map(
+            {Array.from("THE DOOR TO THE WITHIN IS OPEN-STEP THROUGH AND DISCOVER.").map(
               (char, index) => (
                 <span key={index} className="tagline-letter25">
                   {char === " " ? "\u00A0" : char}
