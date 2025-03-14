@@ -197,10 +197,10 @@ useEffect(() => {
       <img loading="lazy"  src={galaxy} alt="galaxy" className="galaxy2025" />
       <div className="landing_2025_Contents">
         <div className="landing_2025_Contents-left">
-          <div className="line_20251 text-gray-500 font-extralight">
+          <div className="line_20251">
             E<span className="blink-letter1">m</span>br
             <span className="blink-letter1">a</span>ce
-            <span className="text_2025">
+            <span className="text_2025 text-gray-400 text-justify">
               It's not just about who you are; it's about who you are becoming
               when no one is watching.
               <br />
