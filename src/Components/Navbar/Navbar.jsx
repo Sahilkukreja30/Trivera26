@@ -282,7 +282,7 @@ const Navbar = () => {
           </Link>{" "}
           {menu === "guideline" ? <hr /> : <></>}{" "}
         </li>
-        <li
+        {/* <li
   onClick={() => handleMenuItemClick("volunteer")}
   style={{
     color: menu === "volunteer" ? "#eb0028" : navTextColor,
@@ -291,13 +291,13 @@ const Navbar = () => {
   }}
   className="family_button"
 >
-  {/* Adjust spans to avoid interfering with clicks */}
+  {/* Adjust spans to avoid interfering with clicks 
   <span className="family_button_span"></span>
   <span className="family_button_span"></span>
   <span className="family_button_span"></span>
   <span className="family_button_span"></span>
 
-  {/* Ensure the <a> tag has a higher z-index */}
+  {/* Ensure the <a> tag has a higher z-index 
   <a
     style={{
       textDecoration: "none",
@@ -320,7 +320,7 @@ const Navbar = () => {
     </span>
   </a>
  
-</li>
+</li> */}
 
       </ul>
     </div>

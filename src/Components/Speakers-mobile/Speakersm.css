@@ -173,7 +173,7 @@ text-align: center;
     position: absolute;
     flex-direction: row;
     top: 114%;
-    left: 55%;
+    left: 19%;
     gap: 3px;
     color: white;
     justify-content: right;
@@ -297,6 +297,9 @@ padding-top: 3vh;
 }
 .mKayden .lin{
     left: 36%;
+}
+.mRajesh .lin{
+    left: 45%;
 }
 
  @media(max-width:550px){

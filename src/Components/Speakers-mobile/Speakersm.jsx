@@ -55,7 +55,7 @@ const speakers2025 = [
     designation: "Additional Deputy Commissioner of Police (DCP),   Cybercrime Expert, Motivational Speaker",
     description:
       "Rajesh Dandotiya is a cybersecurity expert and crime investigator. He leads initiatives like the “Digital Cop Program” and has also received global recognition for his contributions to law enforcement, mentoring, and cybercrime awareness.",
-    image: "https://imgur.com/YBZ4N6t.png",
+    image: "https://imgur.com/EJ81B5R.png",
     instagramLink: "https://www.instagram.com/rajeshdandotiyaasp/?hl=en",
     linkedinLink: "https://www.linkedin.com/in/dandotiyarajesh/?originalSubdomain=in",
   },
@@ -532,6 +532,9 @@ const Speakersm = () => {
                   break;
                 case "Kayden":
                   speakerClass = "mKayden";
+                  break;
+                case "Rajesh":
+                  speakerClass = "mRajesh";
                   break;
                 default:
                     speakerClass = "";
