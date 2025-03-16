@@ -1,10 +1,9 @@
-
 import './App.css';
 
 import Loader from './2025-Components/Loader/Loader';
 import Footer from './Components/Footer/Footer';
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Changed import statement
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import Navbar from './Components/Navbar/Navbar';
 
 import HeroParallax from "./pages/Gallery/hero-parallax"
@@ -21,6 +20,13 @@ import LenisProvider from './Components/LenisProvider';
 
 
 function App() {
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024);
+
+  useEffect(() => {
+    const handleResize = () => setIsLargeScreen(window.innerWidth > 1024);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const productsData = [
     { title: '', link: '', thumbnail: "https://imgur.com/QrWLjTB.png" },  
@@ -58,26 +64,22 @@ function App() {
     { title: 'Abhishek Mishra', link: '', thumbnail: "https://imgur.com/VB6xoI2.png" },
     { title: 'Bhaskar Indrakanti', link: '', thumbnail: "https://imgur.com/iV9tnue.png" },
     { title: 'Akshay Singh', link: '', thumbnail: "https://imgur.com/L2tS0Cz.png" },
-    
-
-    // Add more product data as needed
   ];
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
- 
-  
-
 
   return (
     <div className="App">
-       <Loader/>
-        <div className='hey'>
-          <LenisProvider />
-          <Router>
+      <Loader/>
+      <div className='hey'>
+        {isLargeScreen && <LenisProvider />} {/* Only render on large screens */}
+        
+        <Router>
           <ScrollToTop/>
-            <Navbar />
-            <Layout>
+          <Navbar />
+          <Layout>
             <Routes>
               <Route path='/' element={<Main />} />
               <Route path='/gallery' element={<HeroParallax products={productsData} />} />
@@ -87,11 +89,10 @@ function App() {
               <Route path='/teams-2023' element={<TeamSection />} />
               <Route path='/teams-2025' element={<TeamSection />} />
             </Routes>
-            </Layout>
-            <Footer />
-          </Router>
-        </div>
-      
+          </Layout>
+          <Footer />
+        </Router>
+      </div>
     </div>
   );
 }

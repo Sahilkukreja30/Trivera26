@@ -313,6 +313,7 @@ const Speakersm = () => {
         duration: 1,
         scrollTrigger: {
           trigger: name.closest(".o-mslider__item"),
+         
           scrub: 1,
           start: "top 50%",
           end: "top 100%",
