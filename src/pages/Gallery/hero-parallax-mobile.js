@@ -6,7 +6,7 @@ import {
   useTransform,
   useSpring,
 } from "framer-motion";
-import React from "react";
+
 
 export const HeroParallax2 = ({ products }) => {
   const firstRow = products.slice(0,5);

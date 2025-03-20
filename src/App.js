@@ -79,6 +79,7 @@ function App() {
         <Router>
           <ScrollToTop/>
           <Navbar />
+          <Buy />
           <Layout>
             <Routes>
               <Route path='/' element={<Main />} />
