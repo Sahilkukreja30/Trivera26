@@ -262,6 +262,7 @@ const Speakersm = () => {
       ScrollTrigger.create({
         trigger: slider,
         start: "Top 80%",
+       
         onUpdate: (self) => {
           let scrollPerc = Math.max(
             0,
@@ -277,11 +278,13 @@ const Speakersm = () => {
               snap: { velocity: 0.001 },
               duration: 0.4,
               ease: 'power3',
+              
               overwrite: true,
               onUpdate: () => {
                 slider.style.setProperty('--scroll-y', proxy.velocity > 0 ? 1 : -1);
                 slider.style.setProperty('--scroll-vel', Math.abs(proxy.velocity));
                 gsap.set(title, {
+                  
                   skewX: `${proxy.velocity * 5}deg`,
                   x: -scrollPerc / 100 * (title.offsetWidth - window.innerWidth),
                 });
