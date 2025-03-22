@@ -17,6 +17,7 @@ import Layout from './Components/Buynow/Layout';
 import ScrollToTop from './ScrollToTop';
 import Guidelines from './2025-Components/Guidelines/Guidelines';
 import LenisProvider from './Components/LenisProvider';
+import TicketPopup from './2025-Components/Ticket Pop-up/TicketPopup';
 
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
           <ScrollToTop/>
           <Navbar />
           <Buy />
+          <TicketPopup />
           <Layout>
             <Routes>
               <Route path='/' element={<Main />} />

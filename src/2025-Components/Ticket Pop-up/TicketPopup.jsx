@@ -16,7 +16,7 @@ export default function TicketPopup() {
                     <IoIosCloseCircleOutline className=' w-8 h-8' color='white' />
                 </button>
 
-                <a href="https://www.district.in/tedxdavv-mar28-2025/event" target="_blank" className=' bg-red-600 rounded-md transition-all duration-300 ease-out hover:scale-110 shadow-xl mb-6 shadow-black text-white text-[20px] font-black  px-4 py-2'>     
+                <a href="https://www.district.in/tedxdavv-mar28-2025/event" target="_blank" className=' bg-red-600 rounded-md transition-all duration-300 ease-out hover:scale-110 shadow-xl -mb-[80px] shadow-black text-white text-[20px] font-black  px-4 py-2'>     
                     BUY NOW!!
                 </a>
             </div>
