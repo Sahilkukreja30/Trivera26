@@ -19,7 +19,7 @@ const FaqPage = () => {
       {
           title: "What is the date and time of the Event?",
           description:
-              "The exact date and time for TEDxDAVV 2025 are yet to be finalized. Stay tuned for updates on our official website and social media channels to ensure you don’t miss any announcements!",
+              "The TEDxDAVV event is scheduled for March 28th for the Cultural Fest and March 29th for the Speaker Session. Mark your calendars for an inspiring and exciting experience!",
       },
       {
           title: "What language is spoken at the event?",
@@ -28,12 +28,13 @@ const FaqPage = () => {
       },
       {
           title: "What is the price of tickets?",
-          description: "The price of the tickets are yet to be revealed.",
+          description:
+              "The ticket prices for TEDxDAVV are ₹299 for General, ₹449 for Balcony, ₹799 for VIP, and ₹1199 for VVIP. Grab your tickets and be part of an unforgettable experience!",
       },
       {
-          title: "Are there different ticket types of packages available?",
+          title: "What documents do I need to carry on the event day?",
           description:
-              "Yes, there are but the diff ticket types of packages are yet to be announced.",
+              "Please bring a valid ID and your ticket (if purchased online) for smooth entry and verification.",
       },
   ];
 
