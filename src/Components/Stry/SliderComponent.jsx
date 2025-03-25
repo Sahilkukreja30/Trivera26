@@ -230,8 +230,8 @@ const speakerData2025 = [
     linkedinLink: "https://www.linkedin.com/in/dandotiyarajesh/?originalSubdomain=in",
   },
   {
-    name: "Renuka",
-    surname: "Pundrik Goswami",
+    name: "Renuka Pundrik",
+    surname: "Goswami",
     designation: "Co-founder & Spiritual Mentor, Nimai Pathshala",
     description:
       "Renuka Pundrik Goswami is the co-founder of Nimai Pathshala, dedicated to promoting dharmic values among youth. She actively advocates for spiritual growth, ethical living, and social transformation",
@@ -549,6 +549,8 @@ const getSpeakerNameClass = (name) => {
       return "Aryan-style";
     case "Akshay":
       return "akshay-style";
+    case "Renuka Pundrik":
+      return "Renuka";
 
     case "Abhijit":
       return "Abhijit-style";

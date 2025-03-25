@@ -301,7 +301,14 @@ padding-top: 3vh;
 .mRajesh .lin{
     left: 45%;
 }
-
+.mRenuka .lin{
+    left:60%
+}
+.mRenuka .mSpeaker-name{
+    width: 50vw;
+    right: -75%;
+    font-size: 24px;
+  }
  @media(max-width:550px){
   .o-mslider{
     --title-size: calc(1/8 * 100vh);
