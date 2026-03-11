@@ -12,11 +12,13 @@
 .nav-logo{
    display: flex;
    align-items: center;
+  
    gap: 10px;
    width: 20px;
 }
 .tedx-logo{
    width: 140px;
+   text-shadow: #fefefe;
 }
 
 .nav-logo p{

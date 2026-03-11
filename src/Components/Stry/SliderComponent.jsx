@@ -180,8 +180,8 @@ const speakerData2023 = [
 ];
 const speakerData2025 = [
   {
-    name: "Hiten",
-    surname: "Lulla",
+    name: "Battle of",
+    surname: "Bands",
     designation: "Tech Educator, Software Engineer & Content Creator",
     description:
       "Hiten Lulla, founder of Hiten.Codes, simplifies coding through engaging tech education. A YouTube creator and GitHub contributor, he empowers learners by making technology accessible and fun.",
@@ -190,8 +190,8 @@ const speakerData2025 = [
     linkedinLink: "https://www.linkedin.com/in/hiten-lulla-a434201aa/?originalSubdomain=in",
   },
   {
-    name: "Shreya",
-    surname: "Mahendru",
+    name: "Stand-up",
+    surname: "Comedy",
     designation: "Digital Nomad & Content Creator",
     description:
       "Shreya Mahendru inspires remote work and travel through Instagram and YouTube. She shares freelancing insights to help others embrace a location-independent lifestyle.",
@@ -200,8 +200,8 @@ const speakerData2025 = [
     linkedinLink: "https://www.linkedin.com/in/shreyamahendru/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in",
   },
   {
-    name: "Dr. Prateek",
-    surname: "Makwana",
+    name: "Nukkad",
+    surname: "Natak",
     designation: "Consultant Embryologist & Sexual Health Expert",
     description:
       "Dr. Prateek Makwana leads Vasundhara Hospital Ltd. and Vasundhara IVF. He educates the public through Medical Scribbles, TEDx, and social media, simplifying fertility and sexual health topics for informed decision-making.",
@@ -210,8 +210,8 @@ const speakerData2025 = [
     linkedinLink: "https://www.linkedin.com/in/dr-prateek-makwana-10132a18b/?originalSubdomain=in",
   },
   {
-    name: "Kayden",
-    surname: "Anthony",
+    name: "Sufi",
+    surname: "Night",
     designation: "Wildlife Conservationist & Storyteller",
     description:
       "Kayden Anthony, The Man of the Forest, turns wildlife conservation into a fun, engaging journey. Through storytelling, he educates and inspires communities to protect nature with fresh, playful insights.",
@@ -220,8 +220,8 @@ const speakerData2025 = [
     linkedinLink: "https://www.linkedin.com/in/kayden-anthony/?originalSubdomain=in",
   },
   {
-    name: "Rajesh",
-    surname: "Dandotiya",
+    name: "cultural",
+    surname: "Performance",
     designation: "Additional Deputy Commissioner of Police (DCP),   Cybercrime Expert, Motivational Speaker",
     description:
       "Rajesh Dandotiya is a cybersecurity expert and crime investigator. He leads initiatives like the “Digital Cop Program” and has also received global recognition for his contributions to law enforcement, mentoring, and cybercrime awareness.",
@@ -230,8 +230,8 @@ const speakerData2025 = [
     linkedinLink: "https://www.linkedin.com/in/dandotiyarajesh/?originalSubdomain=in",
   },
   {
-    name: "Renuka Pundrik",
-    surname: "Goswami",
+    name: "Reel",
+    surname: "Making",
     designation: "Co-founder & Spiritual Mentor, Nimai Pathshala",
     description:
       "Renuka Pundrik Goswami is the co-founder of Nimai Pathshala, dedicated to promoting dharmic values among youth. She actively advocates for spiritual growth, ethical living, and social transformation",
@@ -512,7 +512,7 @@ const SliderComponent = () => {
           transition: "opacity 0.5s ease",
         }}
       >
-        <span id="title">Speakers </span>
+        <span id="title">Events</span>
       </h1>
       <select className="year-drop" onChange={handleChange}>
         <option className="option" value="2025" selected>

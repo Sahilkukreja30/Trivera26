@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #FF6B00;
+  --pink: #FF3CAC;
+  --purple: #A855F7;
+  --black: #111111;
+  --bg: #ffffff;
+  --text-main: #111111;
+  --text-sub: rgba(30, 30, 30, 0.6);
+}
+
+body {
+  background: var(--bg);
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  cursor: none;
+}
+
+/* ── Wrapper ── */
+.landing-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Subtle paper-texture noise */
+.landing-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Custom cursor ── */
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: var(--pink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: multiply;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+}
+
+/* ── Hero content ── */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 860px;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.hero-line-1 {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(44px, 9vw, 130px);
+  letter-spacing: 1px;
+  color: var(--text-main);
+  line-height: 0.80;
+  will-change: transform;
+}
+
+.hero-line-2 {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(44px, 9vw, 130px);
+  letter-spacing: -1px;
+  line-height: 1.08;
+  will-change: transform;
+}
+
+.hero-line-3 {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(44px, 9vw, 130px);
+  letter-spacing: -1px;
+  line-height: 1.08;
+  will-change: transform;
+}
+
+.word-one {
+  color: var(--orange);
+  display: inline-block;
+}
+
+.word-campus {
+  background: linear-gradient(90deg, var(--pink) 0%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.word-dot {
+  color: var(--purple);
+  -webkit-text-fill-color: var(--purple);
+}
+
+.hero-subtext {
+  margin-top: 18px;
+  color: var(--text-sub);
+  font-size: clamp(13px, 1.6vw, 18px);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.65;
+  will-change: transform, opacity;
+}
+
+/* ── CTA Buttons ── */
+.cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  width: 100%;
+  will-change: transform, opacity;
+}
+
+.btn-register {
+  padding: 16px 0;
+  border-radius: 50px;
+  text-align: center;
+  background: var(--black);
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(14px, 1.5vw, 16px);
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  will-change: transform;
+  width: 50%;
+  max-width: 420px;
+}
+
+.btn-register:hover {
+  transform: scale(1.03) !important;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.22);
+}
+
+.btn-explore {
+  padding: 16px 0;
+  border-radius: 50px;
+   text-align: center;
+  background: transparent;
+  color: var(--black);
+  font-weight: 700;
+  font-size: clamp(14px, 1.5vw, 16px);
+  border: 2px solid var(--black);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  will-change: transform;
+  width: 50%;
+  max-width: 420px;
+}
+
+.btn-explore:hover {
+  transform: scale(1.03) !important;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Floating sticker badges ── */
+.sticker {
+  position: absolute;
+  z-index: 20;
+  will-change: transform;
+  cursor: none;
+}
+
+.sticker-chaos {
+  top: 54%;
+  left: 4%;
+  background: var(--black);
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(9px, 1vw, 11px);
+  letter-spacing: 0.08em;
+  padding: 8px 14px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+}
+
+.sticker-chaos .bolt {
+  color: #FFD600;
+  font-size: 13px;
+}
+
+.sticker-horn {
+  top: 30%;
+  right: 6%;
+  background: #FFD600;
+  color: #c00;
+  font-weight: 900;
+  font-size: clamp(9px, 1vw, 11px);
+  letter-spacing: 0.1em;
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: 2.5px dashed #c00;
+  white-space: nowrap;
+  transform: rotate(3deg);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+.sticker-loading {
+  top: 13%;
+  left: 28%;
+  background: transparent;
+  border: 2.5px solid #00c853;
+  color: #00c853;
+  font-weight: 700;
+  font-size: clamp(8px, 0.9vw, 10px);
+  letter-spacing: 0.12em;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transform: rotate(-6deg);
+}
+
+/* ── Floating emojis ── */
+.emoji {
+  position: absolute;
+  z-index: 20;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  will-change: transform;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+}
+
+.emoji-rocket  { top: 10%;    left: 11%; }
+.emoji-guitar  { top: 5%;     right: 7%; }
+.emoji-bulb    { top: 65%;    left: 23%; }
+.emoji-coffee  { top: 68%;    right: 8%; }
+.emoji-globe   { top: 50%;    right: 20%; font-size: clamp(1.6rem, 2.8vw, 2.8rem); }
+.emoji-star    { top: 20%;    left: 50%;  font-size: clamp(1rem, 1.4vw, 1.4rem); }
+.emoji-fire    { bottom: 14%; left: 42%;  font-size: clamp(1.2rem, 1.8vw, 1.8rem); }
+.emoji-zap     { bottom: 20%; right: 30%; font-size: clamp(1rem, 1.4vw, 1.4rem); }
+
+/* ── Background orbs (softer on white) ── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform;
+}
+
+.orb-orange {
+  width: clamp(200px, 35vw, 420px);
+  height: clamp(200px, 35vw, 420px);
+  background: rgba(255, 107, 0, 0.09);
+  top: -8%;
+  left: -8%;
+}
+
+.orb-pink {
+  width: clamp(220px, 40vw, 500px);
+  height: clamp(220px, 40vw, 500px);
+  background: rgba(255, 60, 172, 0.07);
+  bottom: -12%;
+  right: -8%;
+}
+
+.orb-purple {
+  width: clamp(180px, 30vw, 360px);
+  height: clamp(180px, 30vw, 360px);
+  background: rgba(168, 85, 247, 0.07);
+  top: 30%;
+  left: 40%;
+}
+
+/* ════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ════════════════════════════════════ */
+
+/* ── Tablet landscape / small desktop (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .emoji-bulb  { left: 14%; }
+  .emoji-coffee { right: 5%; }
+}
+
+/* ── Tablet portrait (≤ 900px) ── */
+@media (max-width: 900px) {
+  body {
+    cursor: auto;
+    overflow-y: auto;
+    height: auto;
+  }
+
+  .cursor,
+  .cursor-follower { display: none; }
+
+  .landing-wrapper {
+    height: auto;
+    min-height: 100vh;
+    padding: 80px 0 60px;
+    overflow: visible;
+  }
+
+  .sticker-chaos   { top: auto; bottom: 8%;  left: 4%; }
+  .sticker-horn    { top: 8%;   right: 3%; }
+  .sticker-loading { top: 6%;   left: 20%; }
+
+  .emoji-rocket  { top: 8%;    left: 4%; }
+  .emoji-guitar  { top: 4%;    right: 3%; }
+  .emoji-bulb    { top: auto;  bottom: 12%; left: 6%; }
+  .emoji-coffee  { top: auto;  bottom: 10%; right: 4%; }
+  .emoji-globe   { top: 48%;   right: 3%; }
+  .emoji-fire    { bottom: 6%; left: 46%; }
+  .emoji-zap     { bottom: 16%; right: 20%; }
+  .emoji-star    { top: 16%;   left: 48%; }
+}
+
+/* ── Mobile (≤ 600px) ── */
+@media (max-width: 770px) {
+  .landing-wrapper {
+    padding: 100px 0 80px;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+  }
+
+  .hero-line-1{
+    font-size: 90px;
+  }
+.hero-line-2{
+    font-size: 90px;
+  }
+  .hero-line-3{
+    font-size: 90px;
+  }
+  /* Hide crowding elements on small screens */
+  .sticker-horn    { display: none; }
+  .sticker-loading { display: none; }
+  .sticker-chaos   {
+    bottom: 6%;
+    left: 50%;
+    top: auto;
+    transform: translateX(-50%);
+  }
+
+  .emoji-globe { display: none; }
+  .emoji-star  { display: none; }
+  .emoji-fire  { display: none; }
+  .emoji-zap   { display: none; }
+
+  .emoji-rocket  { top: 6%;    left: 4%;  font-size: 1.6rem; }
+  .emoji-guitar  { top: 6%;    right: 4%; font-size: 1.6rem; }
+  .emoji-bulb    { bottom: 14%; left: 5%; font-size: 1.5rem; }
+  .emoji-coffee  { bottom: 14%; right: 5%; font-size: 1.5rem; }
+
+  .hero-subtext {
+    font-size: 14px;
+    padding: 0 4px;
+  }
+
+  /* Buttons already stack via flex-direction: column in base styles */
+  .btn-register,
+  .btn-explore {
+    max-width: 40%;
+    font-size: 7px;
+  }
+}
+
+
+
+
+/* ── Mobile (≤ 430px) ── */
+@media (max-width: 430px) {
+  .landing-wrapper {
+    padding: 100px 0 80px;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+  }
+
+  .hero-line-1{
+    font-size: 90px;
+  }
+.hero-line-2{
+    font-size: 90px;
+  }
+  .hero-line-3{
+    font-size: 90px;
+  }
+  /* Hide crowding elements on small screens */
+  .sticker-horn    { display: none; }
+  .sticker-loading { display: none; }
+  .sticker-chaos   {
+    bottom: 6%;
+    left: 50%;
+    top: auto;
+    transform: translateX(-50%);
+  }
+
+  .emoji-globe { display: none; }
+  .emoji-star  { display: none; }
+  .emoji-fire  { display: none; }
+  .emoji-zap   { display: none; }
+
+  .emoji-rocket  { top: 6%;    left: 4%;  font-size: 1.6rem; }
+  .emoji-guitar  { top: 6%;    right: 4%; font-size: 1.6rem; }
+  .emoji-bulb    { bottom: 14%; left: 5%; font-size: 1.5rem; }
+  .emoji-coffee  { bottom: 14%; right: 5%; font-size: 1.5rem; }
+
+  .hero-subtext {
+    font-size: 14px;
+    padding: 0 4px;
+  }
+
+  /* Buttons already stack via flex-direction: column in base styles */
+  .btn-register,
+  .btn-explore {
+    max-width: 40%;
+    font-size: 7px;
+  }
+}
+
+/* ── Very small (≤ 380px) ── */
+@media (max-width: 380px) {
+  .hero-line-1,
+  .hero-line-2,
+  .hero-line-3 {
+    font-size: 85px;
+  }
+
+  .emoji-rocket, .emoji-guitar,
+  .emoji-bulb,  .emoji-coffee {
+    font-size: 1.3rem;
+  }
+
+  .sticker-chaos {
+    font-size: 9px;
+    padding: 6px 10px;
+  }
+}

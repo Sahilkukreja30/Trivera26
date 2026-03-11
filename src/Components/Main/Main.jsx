@@ -8,6 +8,7 @@ import About from '../../2025-Components/About/About';
 import Speakersm from '../Speakers-mobile/Speakersm';
 import SliderComponent from '../Stry/SliderComponent';
 import VideoSection from '../../2025-Components/Video Section/VideoSection';
+import LandingPage from '../../2025-Components/Landingpage26/LandingPage';
 
 const Main = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 968);
@@ -31,7 +32,7 @@ const Main = () => {
 
   return (
     <div>
-      <Landing_page />
+      <LandingPage />
       <FrontPage2025 />
       <About />
       {isMobile ? <Speakersm /> : <SliderComponent />}
