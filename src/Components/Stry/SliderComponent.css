@@ -24,7 +24,7 @@ button:focus {
  
     background-size: cover; 
   --title-size: calc(1 / 4 * 100vh);
-  background-color: #000000 !important;
+  background-color: #2d2884 !important;
   position: relative;
   overflow: hidden;
 z-index: 0;
@@ -36,7 +36,7 @@ z-index: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../../Images/stars1.jpg') no-repeat center center;
+  background:#2d2884;
   background-size: cover;
   background-attachment: fixed;
   opacity: 0.20; /* Opacity for the background image */
@@ -235,7 +235,7 @@ z-index: 0;
     border-top-right-radius: 999rem;
     border-bottom-right-radius: 999rem;
     height: 100%;
-    background: linear-gradient(180deg, #0900FF 0%, #F200FF 100%);
+    background: linear-gradient(180deg, #a5d761 0%, #be0966 100%);
     transition: width 0.1s ease-out;
   }
 

@@ -10,16 +10,16 @@
   top: 0;
   box-sizing: border-box;
 }
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 20px;
+.nav-logo{
+   display: flex;
+   align-items: center;
+  
+   gap: 10px;
+   width: 20px;
 }
-
-.tedx-logo {
-  width: 140px;
+.tedx-logo{
+   width: 140px;
+   text-shadow: #fefefe;
 }
 
 .nav-logo p {
