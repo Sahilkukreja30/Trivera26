@@ -37,7 +37,6 @@ body {
   overflow: hidden;
 }
 
-/* Subtle paper-texture noise */
 .landing-wrapper::before {
   content: '';
   position: absolute;
@@ -82,13 +81,93 @@ body {
   padding: 0 24px;
 }
 
+/* ── Floating emojis base ── */
+.emoji {
+  position: absolute;
+  z-index: 20;
+  will-change: transform;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  /* default size for plain emoji characters */
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+}
+
+/* ── Image sizing inside emoji spans ── */
+.emoji img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ── Scattered positions — plain emoji ── */
+.emoji-rocket {
+  top: 8%;
+  left: 10%;
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+}
+
+.emoji-bulb {
+  top: 62%;
+  left: 22%;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+}
+
+.emoji-star {
+  top: 18%;
+  left: 52%;
+  font-size: clamp(1rem, 1.4vw, 1.4rem);
+}
+
+.emoji-fire {
+  bottom: 12%;
+  left: 44%;
+  font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+}
+
+/* ── Scattered positions — image cutouts (need explicit px/vw size) ── */
+
+/* cutout4 — top right */
+.emoji-guitar {
+  top: 5%;
+  right: 8%;
+  width: clamp(90px, 10vw, 140px);
+  height: clamp(90px, 10vw, 140px);
+}
+
+/* cutout1 — bottom right */
+.emoji-coffee {
+  bottom: 10%;
+  right: 6%;
+  width: clamp(100px, 11vw, 150px);
+  height: clamp(100px, 11vw, 150px);
+}
+
+/* cutout2 — mid right, slightly inward */
+.emoji-globe {
+  top: 48%;
+  right: 18%;
+  width: clamp(80px, 9vw, 120px);
+  height: clamp(80px, 9vw, 120px);
+}
+
+/* cutout3 — bottom left */
+.emoji-zap {
+  bottom: 8%;
+  left: 6%;
+  width: clamp(100px, 11vw, 150px);
+  height: clamp(100px, 11vw, 150px);
+}
+
+/* ── Hero text ── */
 .hero-line-1 {
   display: block;
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(44px, 9vw, 130px);
   letter-spacing: 1px;
   color: var(--text-main);
-  line-height: 1.2;
+  line-height: 1.4;
   will-change: transform;
 }
 
@@ -175,7 +254,7 @@ body {
 .btn-explore {
   padding: 16px 0;
   border-radius: 50px;
-   text-align: center;
+  text-align: center;
   background: transparent;
   color: var(--black);
   font-weight: 700;
@@ -194,7 +273,7 @@ body {
   box-shadow: 0 6px 28px rgba(0, 0, 0, 0.1);
 }
 
-/* ── Floating sticker badges ── */
+/* ── Sticker badges ── */
 .sticker {
   position: absolute;
   z-index: 20;
@@ -254,27 +333,7 @@ body {
   transform: rotate(-6deg);
 }
 
-/* ── Floating emojis ── */
-.emoji {
-  position: absolute;
-  z-index: 20;
-  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-  will-change: transform;
-  user-select: none;
-  pointer-events: none;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
-}
-
-.emoji-rocket  { top: 10%;    left: 11%; }
-.emoji-guitar  { top: 5%;     right: 7%; }
-.emoji-bulb    { top: 65%;    left: 23%; }
-.emoji-coffee  { top: 68%;    right: 8%; }
-.emoji-globe   { top: 50%;    right: 20%; font-size: clamp(1.6rem, 2.8vw, 2.8rem); }
-.emoji-star    { top: 20%;    left: 50%;  font-size: clamp(1rem, 1.4vw, 1.4rem); }
-.emoji-fire    { bottom: 14%; left: 42%;  font-size: clamp(1.2rem, 1.8vw, 1.8rem); }
-.emoji-zap     { bottom: 20%; right: 30%; font-size: clamp(1rem, 1.4vw, 1.4rem); }
-
-/* ── Background orbs (softer on white) ── */
+/* ── Background orbs ── */
 .orb {
   position: absolute;
   border-radius: 50%;
@@ -312,13 +371,12 @@ body {
    RESPONSIVE BREAKPOINTS
    ════════════════════════════════════ */
 
-/* ── Tablet landscape / small desktop (≤ 1024px) ── */
 @media (max-width: 1024px) {
   .emoji-bulb  { left: 14%; }
-  .emoji-coffee { right: 5%; }
+  .emoji-coffee { right: 4%; }
+  .emoji-globe  { right: 12%; }
 }
 
-/* ── Tablet portrait (≤ 900px) ── */
 @media (max-width: 900px) {
   body {
     cursor: auto;
@@ -336,142 +394,74 @@ body {
     overflow: visible;
   }
 
-  .sticker-chaos   { top: auto; bottom: 8%;  left: 4%; }
+  .sticker-chaos   { top: auto; bottom: 8%; left: 4%; }
   .sticker-horn    { top: 8%;   right: 3%; }
   .sticker-loading { top: 6%;   left: 20%; }
 
-  .emoji-rocket  { top: 8%;    left: 4%; }
-  .emoji-guitar  { top: 4%;    right: 3%; }
-  .emoji-bulb    { top: auto;  bottom: 12%; left: 6%; }
-  .emoji-coffee  { top: auto;  bottom: 10%; right: 4%; }
-  .emoji-globe   { top: 48%;   right: 3%; }
-  .emoji-fire    { bottom: 6%; left: 46%; }
-  .emoji-zap     { bottom: 16%; right: 20%; }
-  .emoji-star    { top: 16%;   left: 48%; }
+  /* Plain emoji */
+  .emoji-rocket { top: 8%;    left: 4%; }
+  .emoji-bulb   { top: auto;  bottom: 12%; left: 6%; }
+  .emoji-fire   { bottom: 6%; left: 46%; }
+  .emoji-star   { top: 16%;   left: 48%; }
+
+  /* Image cutouts — slightly smaller on tablet */
+  .emoji-guitar { top: 4%;    right: 3%;  width: clamp(70px, 9vw, 110px); height: clamp(70px, 9vw, 110px); }
+  .emoji-coffee { bottom: 8%; right: 3%;  width: clamp(80px, 10vw, 120px); height: clamp(80px, 10vw, 120px); }
+  .emoji-globe  { top: 48%;   right: 3%;  width: clamp(70px, 8vw, 100px); height: clamp(70px, 8vw, 100px); }
+  .emoji-zap    { bottom: 8%; left: 3%;   width: clamp(80px, 10vw, 120px); height: clamp(80px, 10vw, 120px); }
 }
 
-/* ── Mobile (≤ 600px) ── */
 @media (max-width: 770px) {
-  .landing-wrapper {
-    padding: 100px 0 80px;
-  }
+  .landing-wrapper { padding: 100px 0 80px; }
+  .hero-content    { padding: 0 20px; }
 
-  .hero-content {
-    padding: 0 20px;
-  }
+  .hero-line-1,
+  .hero-line-2,
+  .hero-line-3 { font-size: 120px; }
 
-  .hero-line-1{
-    font-size: 90px;
-  }
-.hero-line-2{
-    font-size: 90px;
-  }
-  .hero-line-3{
-    font-size: 90px;
-  }
-  /* Hide crowding elements on small screens */
   .sticker-horn    { display: none; }
   .sticker-loading { display: none; }
-  .sticker-chaos   {
-    bottom: 6%;
-    left: 50%;
-    top: auto;
-    transform: translateX(-50%);
-  }
+  .sticker-chaos   { bottom: 6%; left: 50%; top: auto; transform: translateX(-50%); }
 
+  /* Hide less important elements on mobile */
   .emoji-globe { display: none; }
   .emoji-star  { display: none; }
   .emoji-fire  { display: none; }
-  .emoji-zap   { display: none; }
 
-  .emoji-rocket  { top: 6%;    left: 4%;  font-size: 1.6rem; }
-  .emoji-guitar  { top: 6%;    right: 4%; font-size: 1.6rem; }
-  .emoji-bulb    { bottom: 14%; left: 5%; font-size: 1.5rem; }
-  .emoji-coffee  { bottom: 14%; right: 5%; font-size: 1.5rem; }
+  /* Keep 4 corners */
+  .emoji-rocket { top: 6%;    left: 4%;  font-size: 1.6rem; }
+  .emoji-bulb   { bottom: 14%; left: 5%; font-size: 1.5rem; }
 
-  .hero-subtext {
-    font-size: 14px;
-    padding: 0 4px;
-  }
+  .emoji-guitar { top: 6%;    right: 4%;  width: 65px; height: 65px; }
+  .emoji-coffee { bottom: 14%; right: 4%; width: 70px; height: 70px; }
+  .emoji-zap    { display: none; }
 
-  /* Buttons already stack via flex-direction: column in base styles */
+  .hero-subtext { font-size: 14px; padding: 0 4px; }
+
   .btn-register,
-  .btn-explore {
-    max-width: 40%;
-    font-size: 7px;
-  }
+  .btn-explore  { max-width: 60%; font-size: 13px; }
 }
 
-
-
-
-/* ── Mobile (≤ 430px) ── */
 @media (max-width: 430px) {
-  .landing-wrapper {
-    padding: 100px 0 80px;
-  }
+  .hero-line-1,
+  .hero-line-2,
+  .hero-line-3 { font-size: 90px;
+   line-height: 1.4; }
 
-  .hero-content {
-    padding: 0 20px;
-  }
+  .emoji-guitar { width: 55px; height: 55px; }
+  .emoji-coffee { width: 55px; height: 55px; }
 
-  .hero-line-1{
-    font-size: 90px;
-  }
-.hero-line-2{
-    font-size: 90px;
-  }
-  .hero-line-3{
-    font-size: 90px;
-  }
-  /* Hide crowding elements on small screens */
-  .sticker-horn    { display: none; }
-  .sticker-loading { display: none; }
-  .sticker-chaos   {
-    bottom: 6%;
-    left: 50%;
-    top: auto;
-    transform: translateX(-50%);
-  }
-
-  .emoji-globe { display: none; }
-  .emoji-star  { display: none; }
-  .emoji-fire  { display: none; }
-  .emoji-zap   { display: none; }
-
-  .emoji-rocket  { top: 6%;    left: 4%;  font-size: 1.6rem; }
-  .emoji-guitar  { top: 6%;    right: 4%; font-size: 1.6rem; }
-  .emoji-bulb    { bottom: 14%; left: 5%; font-size: 1.5rem; }
-  .emoji-coffee  { bottom: 14%; right: 5%; font-size: 1.5rem; }
-
-  .hero-subtext {
-    font-size: 14px;
-    padding: 0 4px;
-  }
-
-  /* Buttons already stack via flex-direction: column in base styles */
   .btn-register,
-  .btn-explore {
-    max-width: 40%;
-    font-size: 7px;
-  }
+  .btn-explore  { max-width: 70%; font-size: 15px; }
 }
 
-/* ── Very small (≤ 380px) ── */
 @media (max-width: 380px) {
   .hero-line-1,
   .hero-line-2,
-  .hero-line-3 {
-    font-size: 85px;
-  }
+  .hero-line-3 { font-size: 65px; }
 
-  .emoji-rocket, .emoji-guitar,
-  .emoji-bulb,  .emoji-coffee {
-    font-size: 1.3rem;
-  }
+  .emoji-rocket, .emoji-bulb { font-size: 1.3rem; }
+  .emoji-guitar, .emoji-coffee { width: 48px; height: 48px; }
 
-  .sticker-chaos {
-    font-size: 9px;
-    padding: 6px 10px;
-  }
+  .sticker-chaos { font-size: 9px; padding: 6px 10px; }
 }

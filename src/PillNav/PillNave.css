@@ -54,22 +54,21 @@
 
 /* ── Logo ── */
 .pill-logo {
-  width: var(--nav-h);
-  height: var(--nav-h);
-  border-radius: 50%;
+  width: 90px;
+  height: 60px;
+  border-radius: 30%;
   background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 8px;
+  padding: 10px;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   overflow: hidden;
   flex-shrink: 0;
 }
 
 .pill-logo img {
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
   object-fit: cover;
   display: block;
 }
