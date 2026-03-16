@@ -1,8 +1,27 @@
 {
   "name": "tedxdavv",
   "version": "0.1.0",
-  "homepage": "https://www.tedxdavv.in",
   "private": true,
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "homepage": "https://www.tedxdavv.in",
+  "bugs": {
+    "url": "https://github.com/sumedhamandloi/Trivera26/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumedhamandloi/Trivera26.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "server.js",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@emailjs/browser": "^4.1.0",
     "@gsap/react": "^2.1.0",
@@ -34,13 +53,16 @@
     "three": "^0.149.0",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "autoprefixer": "^10.4.13",
+    "concurrently": "^8.2.2",
+    "gh-pages": "^5.0.0",
+    "install": "^0.13.0",
+    "npm": "^11.0.0",
+    "postcss": "^8.4.21",
+    "react-fast-marquee": "^1.6.4",
+    "tailwindcss": "^3.2.4"
   },
   "eslintConfig": {
     "extends": [
@@ -59,16 +81,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "autoprefixer": "^10.4.13",
-    "concurrently": "^8.2.2",
-    "gh-pages": "^5.0.0",
-    "install": "^0.13.0",
-    "npm": "^11.0.0",
-    "postcss": "^8.4.21",
-    "react-fast-marquee": "^1.6.4",
-    "tailwindcss": "^3.2.4"
   }
 }

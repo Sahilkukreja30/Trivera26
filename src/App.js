@@ -30,8 +30,8 @@ function App() {
   }, []);
 
   const productsData = [
-    { title: '', link: '', thumbnail: "https://imgur.com/QrWLjTB.png" },  
-    { title: '', link: '', thumbnail: "https://imgur.com/QEeDovI.png" },
+    { title: '', link: '', thumbnail: "https://i.ibb.co/5xXKM7h0/Whats-App-Image-2026-03-15-at-5-57-08-PM-1.jpg" },  
+    { title: '', link: '', thumbnail: "https://i.ibb.co/TB8mnx4Q/Whats-App-Image-2026-03-15-at-5-57-08-PM-2.jpg" },
     { title: '',  link: '',thumbnail: "https://imgur.com/3bwskwY.png"},
     { title: '', link: '', thumbnail: "https://imgur.com/K8U6Lds.png" }, 
     { title: '', link: '', thumbnail: "https://imgur.com/QrXOd6V.png" },
