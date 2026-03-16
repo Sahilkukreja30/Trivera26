@@ -7,7 +7,7 @@ export default function Loader() {
     // Function to add 'loaded' class to body after 4 seconds
     const timeoutId = setTimeout(() => {
       document.querySelector('body').classList.add('loaded')
-    }, 4000) // Ensures the loader runs for 4 seconds
+    }, 2500) // Ensures the loader runs for 4 seconds
 
     // Clean up: clear timeout if the component unmounts
     return () => {
