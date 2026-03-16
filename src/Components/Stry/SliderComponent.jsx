@@ -512,16 +512,16 @@ const SliderComponent = () => {
           transition: "opacity 0.5s ease",
         }}
       >
-        <span id="title">Events</span>
+        <span id="title"></span>
       </h1>
-      <select className="year-drop" onChange={handleChange}>
+      {/* <select className="year-drop" onChange={handleChange}>
         <option className="option" value="2025" selected>
           2025
         </option>
         <option value="2024">2024</option>
         <option value="2023">2023</option>
-      </select>
-
+      </select> */}
+      {/* drop down removed */}
       <SpeakerList selectedYear={selectedYear} />
       <div className="progress-bar">
         <div ref={progressBarRef} className="progress"></div>

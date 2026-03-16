@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
 .typing_text_heading{
-    font-size: 34px;
-    color: rgb(198, 198, 198);
-    font-weight: 100;
+    font-size: 48px;
+    color: black;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
     align-self: flex-start;
     z-index: 10;
 }
@@ -9,6 +12,6 @@
 
 @media screen and (max-width: 480px) {
     .typing_text_heading{
-        font-size: 24px;
+        font-size: 32px;
     }
 }

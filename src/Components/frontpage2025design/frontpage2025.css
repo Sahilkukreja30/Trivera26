@@ -6,7 +6,7 @@
 .main-container25 {
   position: relative !important;
   z-index: 3;
-  background-color: black;
+  background-color: #2d2884;
   min-height: 100vh;
 }
 
@@ -19,8 +19,9 @@
   background: url('../../Images/stars1.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
-  opacity: 0.20 !important;
+  opacity: 0 !important;
   z-index: 3;
+  pointer-events: none;
 }
 
 .frontpage-container25 {
@@ -79,7 +80,7 @@
   top: 55%;
   left: 48%;
   transform: translate(-50%, -50%);
-  background-color: black;
+  background-color: #2d2884;
   z-index: 2;
 }
 
@@ -93,7 +94,7 @@
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 2.5rem;
  top: 50%;
  top: 50%;
 }
@@ -107,6 +108,11 @@
   letter-spacing: 0.5rem;
   line-height: 1.4;
   opacity: 0.6;
+  margin-top: -2.5rem;
+}
+.month img {
+  width: 200rem;
+  height: 15rem;
 }
 .zero {
   font-size: 18rem;
@@ -116,9 +122,9 @@
   line-height: 1;
 }
 /* In your CSS file */
-.zero svg {
-  width: 19rem;
-  height: 19rem;
+.zero img {
+  width: 240rem;
+  height: 21rem;
 }
 .full-year{
   font-size: 7rem;
@@ -127,32 +133,64 @@
   line-height: 3.8;
   font-weight: 800;
   opacity: 0.6;
+  margin-top: 7rem;
+ 
+}
+
+.full-year img {
+  width: 200rem;
+  height: 17rem;
 }
 
 .cultural-container {
   position: absolute;
-  left: 160px;
-  top: 24%;
+  left: -100px;
+  top: 45%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.cultural-container svg {
-  width: 16rem;
-  height: 16rem;
+.cultural-container img {
+  width: 22rem;
+  height: 13rem;
 }
 
 .speakers-container {
   position: absolute;
-  right: 110px;
-  top: -55px;
+  right: -80px;
+  top: -85px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-.speakers-container svg{
-  width: 16rem;
-  height: 16rem;
+.speakers-container img{
+  width: 22rem;
+  height: 13rem;
+}
+
+/* Decorative Elements */
+.decorative-element {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.decorative-element img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.element-top-right {
+  top: 3%;
+  right: 2%;
+  max-width: 180px;
+}
+
+.element-bottom-left {
+  bottom: 5%;
+  left: 2%;
+  max-width: 180px;
 }
 
 .tagline-container25 {
@@ -172,7 +210,7 @@
   font-size: 30px;
   font-size: 30px;
   padding: 5px 15px;
-  background-color: black;
+  background-color: #2d2884;
   color: white;
   z-index: 3;
   text-transform: uppercase;
@@ -222,38 +260,60 @@
   .month {
     font-size: 5.5rem;
     letter-spacing: 0.4rem;
+    margin-top: -1.5rem;
+  }
+  .month img {
+    width: 24rem;
+    height: 14rem;
   }
   .zero {
     font-size: 14rem;
     letter-spacing: 0;
   }
-  .zero svg {
-    width: 15rem;
-    height: 15rem;
-  }
-  .speakers-container svg{
-    width: 14rem;
+  .zero img {
+    width: 20rem;
     height: 14rem;
   }
-  .cultural-container svg {
-    width: 14rem;
+  .speakers-container img{
+    width: 18rem;
+    height: 11rem;
+  }
+  .cultural-container img {
+    width: 30rem;
     height: 14rem;
+    
   }
   .full-year {
     font-size: 5.5rem;
     letter-spacing: 1.5rem;
     line-height: 3.5;
   }
+  .full-year img {
+    width: 24rem;
+    height: 14rem;
+  }
   .tagline25 {
     font-size: 30px;
   }
   .cultural-container {
-    left: 115px;
-    top: 23%;
+    left: 10px;
+    top: 60%;
   }
   .speakers-container {
     right: 70px;
     top: -70px;
+  }
+
+  .element-top-right {
+    max-width: 140px;
+    top: 5%;
+    right: 2%;
+  }
+
+  .element-bottom-left {
+    max-width: 140px;
+    bottom: 8%;
+    left: 2%;
   }
 }
 
@@ -281,6 +341,18 @@
     letter-spacing: 1.2rem;
     line-height: 3.2;
   }
+  .month img {
+    width: 21rem;
+    height: 13rem;
+  }
+  .zero img {
+    width: 18rem;
+    height: 13rem;
+  }
+  .full-year img {
+    width: 21rem;
+    height: 13rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -305,6 +377,11 @@
   .month {
     font-size: 3.5rem;
     letter-spacing: 0.2rem;
+    margin-top: -1rem;
+  }
+  .month img {
+    width: 11rem;
+    height: 7rem;
   }
   .zero {
     font-size: 10rem;
@@ -327,31 +404,47 @@
     line-height: 3;
     top: 30px; 
   }
+  .full-year img {
+    width: 11rem;
+    height: 7rem;
+  }
   .tagline25 {
     font-size: 25px;
   }
   .line-overlay25 {
     display: none;
   }
-  .zero svg {
-    width: 10rem;
-    height: 10rem;
+  .zero img {
+    width: 13rem;
+    height: 8rem;
   }
-  .speakers-container svg{
-    width: 9rem;
-    height: 9rem;
+  .speakers-container img{
+    width: 11rem;
+    height: 7rem;
   }
-  .cultural-container svg {
-    width: 9rem;
-    height: 9rem;
+    .cultural-container img {
+    width: 11rem;
+    height: 7rem;
   }
   .cultural-container {
-    left: 65px;
-    top: 27%;
+    left: 5px;
+    top: 50%;
   }
   .speakers-container {
     right: 55px;
     top: -50px;
+  }
+
+  .element-top-right {
+    max-width: 110px;
+    top: 8%;
+    right: 2%;
+  }
+
+  .element-bottom-left {
+    max-width: 110px;
+    bottom: 10%;
+    left: 2%;
   }
 }
 
@@ -372,8 +465,12 @@
     font-size: 2.5rem;
     letter-spacing: 0.15rem;
     line-height: 1.8;
+    margin-top: -0.8rem;
   }
-  .zero {
+  .month img {
+    width: 6.5rem;
+    height: 4rem;
+  }  .zero {
     font-size: 7rem;
     line-height: 1;
   }
@@ -400,6 +497,10 @@
     position: relative;
     top: 20px; /* Added to move the full-year down in mobile view */
   }
+  .full-year img {
+    width: 6.5rem;
+    height: 4rem;
+  }
   .tagline25 {
     font-size: 20px;
     font-size: 20px;
@@ -408,25 +509,37 @@
     left: 51%;
     top: 50%;
   }
-  .zero svg {
-    width: 7rem;
-    height: 7rem;
+  .zero img {
+    width: 9rem;
+    height: 5rem;
   }
-  .speakers-container svg{
-    width: 6rem;
-    height: 6rem;
+  .speakers-container img{
+    width: 8rem;
+    height: 4.5rem;
   }
-  .cultural-container svg {
-    width: 6rem;
-    height: 6rem;
+    .cultural-container img {
+    width: 8rem;
+    height: 4.5rem;
   }
   .cultural-container {
-    left: 55px;
-    top: 30%;
+    left: 5px;
+    top: 55%;
   }
   .speakers-container {
     right: 50px;
     top: -30px;
+  }
+
+  .element-top-right {
+    max-width: 75px;
+    top: 10%;
+    right: 2%;
+  }
+
+  .element-bottom-left {
+    max-width: 75px;
+    bottom: 12%;
+    left: 2%;
   }
 }
 
@@ -442,6 +555,11 @@
     font-size: 1.9rem;
     letter-spacing: 0.1rem;
     line-height: 1.6;
+    margin-top: -0.6rem;
+  }
+  .month img {
+    width: 6.5rem;
+    height: 4rem;
   }
   .zero {
     font-size: 5rem;
@@ -452,27 +570,43 @@
     line-height: 2.5;
     top: 15px; /* Adjusted for smallest screens */
   }
+  .full-year img {
+    width: 6.5rem;
+    height: 4rem;
+  }
   .tagline25 {
     font-size: 15px;
   }
-  .zero svg {
-    width: 6rem;
-    height: 6rem;
+  .zero img {
+    width: 7.5rem;
+    height: 4.5rem;
   }
-  .speakers-container svg{
-    width: 5rem;
-    height: 5rem;
+  .speakers-container img{
+    width: 6.5rem;
+    height: 4rem;
   }
-  .cultural-container svg {
-    width: 5rem;
-    height: 5rem;
+    .cultural-container img {
+    width: 6.5rem;
+    height: 4rem;
   }
   .cultural-container {
-    left: 40px;
-    top: 35%;
+    left: 3px;
+    top: 60%;
   }
   .speakers-container {
     right: 35px;
     top: -25px;
+  }
+
+  .element-top-right {
+    max-width: 60px;
+    top: 12%;
+    right: 2%;
+  }
+
+  .element-bottom-left {
+    max-width: 60px;
+    bottom: 15%;
+    left: 2%;
   }
 }
