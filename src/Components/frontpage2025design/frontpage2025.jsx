@@ -5,9 +5,13 @@ import "./frontpage2025.css";
 import SideMarquee2 from "../../2025-Components/sidemarquee2/sidemarquee2";
 import TypePara from "../../2025-Components/TypePara/TypePara";
 import TypePara2 from "../../2025-Components/typepara2/typepara2";
-import { ReactComponent as NumberSvg } from "../Assests/Images/Group 104.svg";
-import { ReactComponent as Cultural } from "../Assests/Images/Group 106.svg";
-import { ReactComponent as SPEAKERS } from "../Assests/Images/Group 105.svg";
+import DateImage from "../Assests/Images/date-0910.png";
+import AprilImage from "../Assests/Images/april.png";
+import YearImage from "../Assests/Images/year-2026.png";
+import CulturalImage from "../Assests/Images/Past&present.png";
+import SpeakersImage from "../Assests/Images/Present&future.png";
+import Element3 from "../Assests/Images/element3.png";
+import Element4 from "../Assests/Images/element4.png";
 
 const debounce = (func, wait) => {
   let timeout;
@@ -30,6 +34,8 @@ const FrontPage2025 = ({ onScaleComplete }) => {
   const zeroRef = useRef();
   const culturalRef = useRef();
   const speakersRef = useRef();
+  const element3Ref = useRef();
+  const element4Ref = useRef();
   const [visibleTexts, setVisibleTexts] = useState([false, false, false, false]);
 
   useEffect(() => {
@@ -98,6 +104,44 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       { opacity: 1, duration: 0.5, ease: "power2.out" },
       "+=0.5"
     );
+
+    // Initialize decorative elements with hidden state
+    gsap.set([element3Ref.current, element4Ref.current], { 
+      opacity: 0, 
+      scale: 0.5 
+    });
+
+    // Animate decorative elements with different timings
+    timeline.to(
+      element3Ref.current,
+      { opacity: 0.7, scale: 1, duration: 1, ease: "back.out" },
+      "+=0.3"
+    );
+
+    timeline.to(
+      element4Ref.current,
+      { opacity: 0.7, scale: 1, duration: 1, ease: "back.out" },
+      "<0.2"
+    );
+
+    // Add floating animation to decorative elements
+    gsap.to(element3Ref.current, {
+      y: 15,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: 0.5
+    });
+
+    gsap.to(element4Ref.current, {
+      y: -15,
+      duration: 3.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: 0.8
+    });
 
     // Add initial state for line-overlay
     gsap.set(lineOverlayRef.current, { opacity: 0 });
@@ -193,18 +237,34 @@ const FrontPage2025 = ({ onScaleComplete }) => {
         <div className="year-container25">
           <span ref={yearRef} className="year25">
             <div ref={culturalRef} className="cultural-container">
-              <Cultural />
+              <img src={CulturalImage} alt="Past & Present" />
             </div>
-            <p className="month">MARCH</p>
+            <div className="month">
+              <img src={AprilImage} alt="April" />
+            </div>
             <span ref={zeroRef} className="zero">
-              <NumberSvg />
+              <img src={DateImage} alt="Date" />
             </span>
-            <span className="full-year">2025</span>
+            {/* <span className="full-year">2026</span> */}
+            <div className="full-year">
+              <img src={YearImage} alt="2026" />
+            </div>
             <div ref={speakersRef} className="speakers-container">
-              <SPEAKERS/>
+              <img src={SpeakersImage} alt="Speakers" />
             </div>
           </span>
         </div>
+
+        {/* Decorative Elements */}
+        <div ref={element3Ref} className="decorative-element element-bottom-left">
+          <img src={Element3} alt="Decorative Element 3" />
+        </div>
+        <div ref={element4Ref} className="decorative-element element-top-right">
+          <img src={Element4} alt="Decorative Element 4" />
+        </div>
+
+        
+        {/* this is the last line of the page */}
         <div className="tagline-container25" ref={taglineRef}>
           <div className="tagline25">
             {Array.from("THE DOOR TO THE WITHIN IS OPEN-STEP THROUGH AND DISCOVER.").map(
@@ -216,7 +276,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
             )}
           </div>
         </div>
-        <div className="columns-container25">
+        {/* <div className="columns-container25">
           <div className="column25">
             <span ref={(el) => (textRefs.current[0] = el)} className="text25">
               {visibleTexts[0] && <TypePara2 para="WHAT DEFINES YOUR TRUE SELF—THE IMAGE YOU SHOW OR THE THOUGHTS YOU KEEP HIDDEN? " />}
@@ -237,7 +297,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
               {visibleTexts[3] && <TypePara2 para="OUR SPEAKERS SHARE STORIES THAT SPARK YOUR INNER JOURNEY, LEADING YOU TO NEW DEPTHS OF SELF-DISCOVERY." />}
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

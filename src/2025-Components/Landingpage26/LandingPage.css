@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700;900&family=Inter:wght@400;600;700;900&display=swap');
 
 * {
   margin: 0;
@@ -29,12 +29,16 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: var(--bg);
+  background-image: url("../../Images/trivera_landing_bg(new).png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   overflow: hidden;
+  padding-left: 64px;
 }
 
 .landing-wrapper::before {
@@ -75,10 +79,18 @@ body {
 .hero-content {
   position: relative;
   z-index: 10;
-  text-align: center;
-  max-width: 860px;
+  text-align: left;
+  max-width: 756px;
   width: 100%;
   padding: 0 24px;
+  
+}
+
+.hero-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 24px;
 }
 
 /* ── Floating emojis base ── */
@@ -101,39 +113,14 @@ body {
   object-fit: contain;
 }
 
-/* ── Scattered positions — plain emoji ── */
-.emoji-rocket {
-  top: 8%;
-  left: 10%;
-  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
-}
-
-.emoji-bulb {
-  top: 62%;
-  left: 22%;
-  font-size: clamp(1.4rem, 2.2vw, 2rem);
-}
-
-.emoji-star {
-  top: 18%;
-  left: 52%;
-  font-size: clamp(1rem, 1.4vw, 1.4rem);
-}
-
-.emoji-fire {
-  bottom: 12%;
-  left: 44%;
-  font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-}
-
 /* ── Scattered positions — image cutouts (need explicit px/vw size) ── */
 
 /* cutout4 — top right */
-.emoji-guitar {
-  top: 5%;
+.emoji-auto {
+  top: 16%;
   right: 8%;
-  width: clamp(90px, 10vw, 140px);
-  height: clamp(90px, 10vw, 140px);
+  width: clamp(580px, 20vw, 680px);
+  height: clamp(580px, 20vw, 680px);
 }
 
 /* cutout1 — bottom right */
@@ -152,40 +139,38 @@ body {
   height: clamp(80px, 9vw, 120px);
 }
 
-/* cutout3 — bottom left */
-.emoji-zap {
-  bottom: 8%;
-  left: 6%;
-  width: clamp(100px, 11vw, 150px);
-  height: clamp(100px, 11vw, 150px);
-}
 
 /* ── Hero text ── */
 .hero-line-1 {
   display: block;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(44px, 9vw, 130px);
-  letter-spacing: 1px;
-  color: var(--text-main);
-  line-height: 1.4;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 90px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  line-height: 113px;
   will-change: transform;
 }
 
 .hero-line-2 {
   display: block;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(44px, 9vw, 130px);
-  letter-spacing: -1px;
-  line-height: 1.08;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 90px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  line-height: 113px;
   will-change: transform;
 }
 
 .hero-line-3 {
   display: block;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(44px, 9vw, 130px);
-  letter-spacing: -1px;
-  line-height: 1.08;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 90px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  line-height: 113px;
   will-change: transform;
 }
 
@@ -208,23 +193,25 @@ body {
 }
 
 .hero-subtext {
-  margin-top: 18px;
-  color: var(--text-sub);
-  font-size: clamp(13px, 1.6vw, 18px);
+  margin: 32px 0;
+  color: #FFFFFF;
+  opacity: 0.6;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
   font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1.65;
+  letter-spacing: 0;
+  line-height: 24px;
+  max-width: 500px;
   will-change: transform, opacity;
 }
 
 /* ── CTA Buttons ── */
 .cta-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 14px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 32px;
   width: 100%;
   will-change: transform, opacity;
 }
@@ -252,25 +239,25 @@ body {
 }
 
 .btn-explore {
-  padding: 16px 0;
-  border-radius: 50px;
+  padding: 12px 24px;
+  border-radius: 16px;
   text-align: center;
-  background: transparent;
-  color: var(--black);
-  font-weight: 700;
-  font-size: clamp(14px, 1.5vw, 16px);
-  border: 2px solid var(--black);
+  background: linear-gradient(105.33deg, #E4008A 12.57%, #FF009A 36.79%, #FE016A 71.15%);
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 20px;
+  border: none;
   cursor: pointer;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   transition: transform 0.2s, box-shadow 0.2s;
   will-change: transform;
-  width: 50%;
-  max-width: 420px;
+  font-family: 'Orbitron', sans-serif;
+  white-space: nowrap;
 }
 
 .btn-explore:hover {
-  transform: scale(1.03) !important;
-  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 28px rgba(228, 0, 138, 0.4);
 }
 
 /* ── Sticker badges ── */
@@ -343,6 +330,28 @@ body {
   will-change: transform;
 }
 
+/* ── Shape layer ── */
+.shape-layer {
+  position: absolute;
+  top: 16%;
+  right: 8%;
+  width: clamp(580px, 20vw, 680px);
+  height: clamp(580px, 20vw, 680px);
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.shape-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .orb-orange {
   width: clamp(200px, 35vw, 420px);
   height: clamp(200px, 35vw, 420px);
@@ -372,7 +381,6 @@ body {
    ════════════════════════════════════ */
 
 @media (max-width: 1024px) {
-  .emoji-bulb  { left: 14%; }
   .emoji-coffee { right: 4%; }
   .emoji-globe  { right: 12%; }
 }
@@ -400,15 +408,11 @@ body {
 
   /* Plain emoji */
   .emoji-rocket { top: 8%;    left: 4%; }
-  .emoji-bulb   { top: auto;  bottom: 12%; left: 6%; }
-  .emoji-fire   { bottom: 6%; left: 46%; }
-  .emoji-star   { top: 16%;   left: 48%; }
 
   /* Image cutouts — slightly smaller on tablet */
-  .emoji-guitar { top: 4%;    right: 3%;  width: clamp(70px, 9vw, 110px); height: clamp(70px, 9vw, 110px); }
+  .emoji-auto { top: 4%;    right: 3%;  width: clamp(70px, 9vw, 110px); height: clamp(70px, 9vw, 110px); }
   .emoji-coffee { bottom: 8%; right: 3%;  width: clamp(80px, 10vw, 120px); height: clamp(80px, 10vw, 120px); }
   .emoji-globe  { top: 48%;   right: 3%;  width: clamp(70px, 8vw, 100px); height: clamp(70px, 8vw, 100px); }
-  .emoji-zap    { bottom: 8%; left: 3%;   width: clamp(80px, 10vw, 120px); height: clamp(80px, 10vw, 120px); }
 }
 
 @media (max-width: 770px) {
@@ -424,17 +428,11 @@ body {
   .sticker-chaos   { bottom: 6%; left: 50%; top: auto; transform: translateX(-50%); }
 
   /* Hide less important elements on mobile */
-  .emoji-globe { display: none; }
-  .emoji-star  { display: none; }
-  .emoji-fire  { display: none; }
 
   /* Keep 4 corners */
-  .emoji-rocket { top: 6%;    left: 4%;  font-size: 1.6rem; }
-  .emoji-bulb   { bottom: 14%; left: 5%; font-size: 1.5rem; }
 
-  .emoji-guitar { top: 6%;    right: 4%;  width: 65px; height: 65px; }
+  .emoji-auto { top: 6%;    right: 4%;  width: 65px; height: 65px; }
   .emoji-coffee { bottom: 14%; right: 4%; width: 70px; height: 70px; }
-  .emoji-zap    { display: none; }
 
   .hero-subtext { font-size: 14px; padding: 0 4px; }
 
@@ -448,7 +446,7 @@ body {
   .hero-line-3 { font-size: 90px;
    line-height: 1.4; }
 
-  .emoji-guitar { width: 55px; height: 55px; }
+  .emoji-auto { width: 55px; height: 55px; }
   .emoji-coffee { width: 55px; height: 55px; }
 
   .btn-register,
@@ -460,8 +458,8 @@ body {
   .hero-line-2,
   .hero-line-3 { font-size: 65px; }
 
-  .emoji-rocket, .emoji-bulb { font-size: 1.3rem; }
-  .emoji-guitar, .emoji-coffee { width: 48px; height: 48px; }
+  .emoji-rocket, .emoji-coffee { font-size: 1.3rem; }
+  .emoji-auto, .emoji-coffee { width: 48px; height: 48px; }
 
   .sticker-chaos { font-size: 9px; padding: 6px 10px; }
 }

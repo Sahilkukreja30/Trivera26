@@ -30,7 +30,7 @@ const About = () => {
             <ImageAbout img={image2} />
 
             <span className=' flex flex-col gap-[50px] max-w-[500px]' >
-                <TypeHeading content='Interconnectedness' />
+                <TypeHeading content='PAST ERA' />
 
                 <TypePara para='Our identities are shaped by how we view ourselves through the eyes of others. It is in these relationships and communities that the chaos hidden from our view is revealed, thus bringing us closer to the understanding of our true essence within.' />
 
@@ -46,7 +46,7 @@ const About = () => {
             {/* <div className='about_2025_stars'></div> */}
 
             <span className=' max-w-[500px]' style={{ display: 'flex', flexDirection: 'column', rowGap: '50px'}} >
-                <TypeHeading content='Self - discovery' />
+                <TypeHeading content='PRESENT ERA' />
 
                 <TypePara para='The search for purpose can take us through uncertain times, where outside pressures make it hard to hear our inner voice. By freeing ourselves from these distractions, we start to uncover important truths. It’s a journey of clarity, where confusion slowly turns into self-awareness.' />
 
@@ -67,7 +67,7 @@ const About = () => {
             <ImageAbout img={image3} />
 
             <span className=' max-w-[500px]' style={{ display: 'flex', flexDirection: 'column', rowGap: '50px'}} >
-                <TypeHeading content='Unseen Forces' />
+                <TypeHeading content='FUTURE ERA' />
 
                 <TypePara para='Our thoughts, emotions, and even past events may shape us subconsciously into who we become. Such hidden influences take control over our decisions, creativity, and spiritual life and inspire us to unlock deeper levels within ourselves.' />
             </span>
