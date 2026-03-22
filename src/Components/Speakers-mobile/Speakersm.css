@@ -117,13 +117,15 @@ button:focus {
     opacity: 1;
    
     background: linear-gradient(180deg, #0900FF 0%, #F200FF 100%);
+
+    width: 40vw;
+    height: 25vh;
+    left: 3vw;
+    top: 6vw;
+
     
-    top: 3vw;
-    left: 24vw;
     border-radius: 10%;
     display: block;
-    width: 300px;
-    height: 320px;
     object-fit: cover;
     object-position: 50% 50%;
     transform: scale(1.1);
@@ -135,10 +137,10 @@ button:focus {
     left: -95vw;
     width: 70vw;
 
-  z-index: 3;
-font-size: 20px;
-font-weight: 300;
-text-align: center;
+    z-index: 3;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
 }
 .mspeaker-name p{
     color: black;
@@ -153,7 +155,7 @@ text-align: center;
     line-height: 55px;
     text-align: right;
     display: flex;
-   flex-direction: row;
+    flex-direction: row;
     font-size: 45px;
     font-weight: bolder;
 }
@@ -317,13 +319,13 @@ padding-top: 3vh;
   
   
   
-  .o-mslider__img{
-    width: 50vw;
-    height: 30vh;
-    left: 21vw;
+  .o-mslider__img {
+    width: 40vw;     
+    height: 25vh;
+    left: 5vw;       
     top: 4vw;
-   
   }
+
   .image_bg_25{
     width: 50vw;
     height: 30vh;
@@ -331,10 +333,11 @@ padding-top: 3vh;
     top: 6vw;
   }
   .mSpeaker-name{
-    right: -57vw;
-    top: 8vh;
-    font-size: 30px;
-    line-height: 40px;
+    right: -52vw;       
+    font-size: 24px;     
+    line-height: 32px;
+    width: 45vw;         
+    word-break: break-word;    
   }
   .mspeaker-desg{
     top: 42vh;
