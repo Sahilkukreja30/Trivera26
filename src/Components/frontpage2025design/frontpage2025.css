@@ -75,10 +75,8 @@
 
 .year-container25 {
   position: absolute;
-  top: 55%;
-  left: 48%;
-  top: 55%;
-  left: 48%;
+  top: 45%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background-color: #2d2884;
   z-index: 2;
@@ -120,6 +118,9 @@
   transition: opacity 1s ease-out;
   letter-spacing: 0rem;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* In your CSS file */
 .zero img {
@@ -240,22 +241,23 @@
   animation: blink25 2.8s ease-in-out;
 }
 
-/* Media Queries for Responsiveness */
-
-
+/* ════════════════════════════════════
+   RESPONSIVE MEDIA QUERIES
+   (Desktop >1080px remains unchanged)
+   ════════════════════════════════════ */
 
 @media (max-width: 1080px) {
   .text25 {
-    font-size: 10px;
-    width: 60%;
     font-size: 10px;
     width: 60%;
   }
   .text2 {
     left: -130px;
   }
-  .year-container25{
-    top:60%
+  .year-container25 {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .month {
     font-size: 5.5rem;
@@ -263,25 +265,27 @@
     margin-top: -1.5rem;
   }
   .month img {
-    width: 24rem;
-    height: 14rem;
+    width: clamp(18rem, 8vw, 24rem);
+    height: clamp(11rem, 5vw, 14rem);
   }
   .zero {
     font-size: 14rem;
     letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .zero img {
-    width: 20rem;
-    height: 14rem;
+    width: clamp(16rem, 7vw, 20rem);
+    height: clamp(11rem, 5vw, 14rem);
   }
-  .speakers-container img{
-    width: 18rem;
-    height: 11rem;
+  .speakers-container img {
+    width: clamp(14rem, 6vw, 18rem);
+    height: clamp(9rem, 4vw, 11rem);
   }
   .cultural-container img {
-    width: 30rem;
-    height: 14rem;
-    
+    width: clamp(24rem, 10vw, 30rem);
+    height: clamp(11rem, 5vw, 14rem);
   }
   .full-year {
     font-size: 5.5rem;
@@ -289,8 +293,8 @@
     line-height: 3.5;
   }
   .full-year img {
-    width: 24rem;
-    height: 14rem;
+    width: clamp(18rem, 8vw, 24rem);
+    height: clamp(11rem, 5vw, 14rem);
   }
   .tagline25 {
     font-size: 30px;
@@ -303,13 +307,11 @@
     right: 70px;
     top: -70px;
   }
-
   .element-top-right {
     max-width: 140px;
     top: 5%;
     right: 2%;
   }
-
   .element-bottom-left {
     max-width: 140px;
     bottom: 8%;
@@ -321,20 +323,16 @@
   .text25 {
     font-size: 12px;
     width: 75%;
-    width: 75%;
   }
-  .month {
-    font-size: 4.5rem;
-    letter-spacing: 0.3rem;
-  }
-  .zero {
-    font-size: 12rem;}
   .month {
     font-size: 4.5rem;
     letter-spacing: 0.3rem;
   }
   .zero {
     font-size: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .full-year {
     font-size: 4.5rem;
@@ -342,16 +340,16 @@
     line-height: 3.2;
   }
   .month img {
-    width: 21rem;
-    height: 13rem;
+    width: clamp(16rem, 7vw, 21rem);
+    height: clamp(10rem, 4.5vw, 13rem);
   }
   .zero img {
-    width: 18rem;
-    height: 13rem;
+    width: clamp(14rem, 6vw, 18rem);
+    height: clamp(10rem, 4.5vw, 13rem);
   }
   .full-year img {
-    width: 21rem;
-    height: 13rem;
+    width: clamp(16rem, 7vw, 21rem);
+    height: clamp(10rem, 4.5vw, 13rem);
   }
 }
 
@@ -360,15 +358,16 @@
     gap: 2%;
     padding: 10px;
   }
-  .combined-column25{
+  .combined-column25 {
     gap: 2rem;
   }
-  .year-container25{
-    top:55%
+  .year-container25 {
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .text25 {
     font-size: 10px;
-    width: 50%;
     width: 50%;
   }
   .text2 {
@@ -380,33 +379,25 @@
     margin-top: -1rem;
   }
   .month img {
-    width: 11rem;
-    height: 7rem;
+    width: clamp(10rem, 6vw, 11rem);
+    height: clamp(6rem, 4vw, 7rem);
   }
   .zero {
     font-size: 10rem;
+  }
+  .zero img {
+    width: clamp(12rem, 6.5vw, 13rem);
+    height: clamp(7rem, 4.5vw, 8rem);
   }
   .full-year {
     font-size: 3.5rem;
     letter-spacing: 1rem;
     line-height: 3;
-    top: 30px; }
-  .month {
-    font-size: 3.5rem;
-    letter-spacing: 0.2rem;
-  }
-  .zero {
-    font-size: 10rem;
-  }
-  .full-year {
-    font-size: 3.5rem;
-    letter-spacing: 1rem;
-    line-height: 3;
-    top: 30px; 
+    top: 30px;
   }
   .full-year img {
-    width: 11rem;
-    height: 7rem;
+    width: clamp(10rem, 6vw, 11rem);
+    height: clamp(6rem, 4vw, 7rem);
   }
   .tagline25 {
     font-size: 25px;
@@ -414,17 +405,13 @@
   .line-overlay25 {
     display: none;
   }
-  .zero img {
-    width: 13rem;
-    height: 8rem;
+  .speakers-container img {
+    width: clamp(10rem, 6vw, 11rem);
+    height: clamp(6rem, 4vw, 7rem);
   }
-  .speakers-container img{
-    width: 11rem;
-    height: 7rem;
-  }
-    .cultural-container img {
-    width: 11rem;
-    height: 7rem;
+  .cultural-container img {
+    width: clamp(10rem, 6vw, 11rem);
+    height: clamp(6rem, 4vw, 7rem);
   }
   .cultural-container {
     left: 5px;
@@ -434,13 +421,11 @@
     right: 55px;
     top: -50px;
   }
-
   .element-top-right {
     max-width: 110px;
     top: 8%;
     right: 2%;
   }
-
   .element-bottom-left {
     max-width: 110px;
     bottom: 10%;
@@ -448,98 +433,177 @@
   }
 }
 
-@media (max-width: 480px) {
-  .columns-container25 {
-    padding: 5px;
-    top: 10%;
-  }
+@media (max-width: 600px) {
   .text25 {
     font-size: 6px;
-    width: 50%;
-    width: 50%;
+    width: 55%;
   }
   .text2 {
-    left: -40px;
-  }
-  .month {
-    font-size: 2.5rem;
-    letter-spacing: 0.15rem;
-    line-height: 1.8;
-    margin-top: -0.8rem;
-  }
-  .month img {
-    width: 6.5rem;
-    height: 4rem;
-  }  .zero {
-    font-size: 7rem;
-    line-height: 1;
-  }
-  .full-year {
-    font-size: 2.5rem;
-    letter-spacing: 0.8rem;
-    line-height: 3;
-    position: relative;
-    top: 20px; /* Added to move the full-year down in mobile view */}
-
-  .month {
-    font-size: 2.5rem;
-    letter-spacing: 0.15rem;
-    line-height: 1.8;
-  }
-  .zero {
-    font-size: 7rem;
-    line-height: 1;
-  }
-  .full-year {
-    font-size: 2.5rem;
-    letter-spacing: 0.8rem;
-    line-height: 3;
-    position: relative;
-    top: 20px; /* Added to move the full-year down in mobile view */
-  }
-  .full-year img {
-    width: 6.5rem;
-    height: 4rem;
-  }
-  .tagline25 {
-    font-size: 20px;
-    font-size: 20px;
+    left: -32px;
   }
   .year-container25 {
-    left: 51%;
     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 375px;
+    padding: 20px;
   }
+  .year25 {
+    width: 100%;
+    gap: 0.2rem;
+  }
+  .month {
+    font-size: clamp(1.8rem, 6vw, 1.9rem);
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+    margin-top: 2rem;
+  }
+  /* Month PNG increased by 70% */
+  .month img {
+    width: clamp(9.5rem, 55vw, 10rem);
+    height: clamp(3.5rem, 18vw, 4rem);
+    
+  }
+  .zero {
+    font-size: clamp(4.8rem, 13vw, 5rem);
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Zero PNG increased by 70% */
   .zero img {
-    width: 9rem;
-    height: 5rem;
+    width: clamp(1rem, 50vw, 15rem);
+    height: clamp(6.5rem, 16vw, 7rem);
   }
-  .speakers-container img{
-    width: 8rem;
-    height: 4.5rem;
-  }
-    .cultural-container img {
-    width: 8rem;
-    height: 4.5rem;
-  }
-  .cultural-container {
-    left: 5px;
-    top: 55%;
-  }
-  .speakers-container {
-    right: 50px;
+  .full-year {
+    font-size: clamp(1.8rem, 6vw, 1.9rem);
+    letter-spacing: 0.55rem;
+    line-height: 2.4;
     top: -30px;
   }
-
-  .element-top-right {
-    max-width: 75px;
-    top: 10%;
-    right: 2%;
+  /* Full year PNG increased by 70% */
+  .full-year img {
+    width: clamp(7rem, 55vw, 8.5rem);
+    height: clamp(4.5rem, 18vw, 6.5rem);
   }
-
+  .tagline25 {
+    font-size: clamp(14px, 4vw, 15px);
+  }
+  /* Cultural container repositioned and PNG increased by 70% */
+  .cultural-container {
+    left: 0px;
+    top: 87px;
+  }
+  .cultural-container img {
+    width: clamp(8.2rem, 6.8vw, 11.05rem);
+    height: clamp(3.95rem, 4.25vw, 6.8rem);
+  }
+  /* Speakers container repositioned and PNG increased by 70% */
+  .speakers-container {
+    right: -10px;
+    top: 25px;
+  }
+  .speakers-container img {
+    width: clamp(8.2rem, 6.8vw, 11.05rem);
+    height: clamp(4.25rem, 4.25vw, 6.8rem);
+  }
+  .element-top-right {
+    max-width: clamp(55px, 8vw, 60px);
+    top: 10%;
+    right: 3%;
+  }
   .element-bottom-left {
-    max-width: 75px;
-    bottom: 12%;
-    left: 2%;
+    max-width: clamp(55px, 8vw, 60px);
+    bottom: 13%;
+    left: 3%;
+  }
+}
+
+@media (max-width: 480px) {
+  .text25 {
+    font-size: 6px;
+    width: 55%;
+  }
+  .text2 {
+    left: -32px;
+  }
+  .year-container25 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 375px;
+    padding: 20px;
+  }
+  .year25 {
+    width: 100%;
+    gap: 0.2rem;
+  }
+  .month {
+    font-size: clamp(1.8rem, 6vw, 1.9rem);
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+    margin-top: 2rem;
+  }
+  /* Month PNG increased by 70% */
+  .month img {
+    width: clamp(9.5rem, 55vw, 10rem);
+    height: clamp(3.5rem, 18vw, 4rem);
+    
+  }
+  .zero {
+    font-size: clamp(4.8rem, 13vw, 5rem);
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Zero PNG increased by 70% */
+  .zero img {
+    width: clamp(1rem, 50vw, 15rem);
+    height: clamp(6.5rem, 16vw, 7rem);
+  }
+  .full-year {
+    font-size: clamp(1.8rem, 6vw, 1.9rem);
+    letter-spacing: 0.55rem;
+    line-height: 2.4;
+    top: -30px;
+  }
+  /* Full year PNG increased by 70% */
+  .full-year img {
+    width: clamp(7rem, 55vw, 8.5rem);
+    height: clamp(4.5rem, 18vw, 6.5rem);
+  }
+  .tagline25 {
+    font-size: clamp(14px, 4vw, 15px);
+  }
+  /* Cultural container repositioned and PNG increased by 70% */
+  .cultural-container {
+    left: 0px;
+    top: 87px;
+  }
+  .cultural-container img {
+    width: clamp(8.2rem, 6.8vw, 11.05rem);
+    height: clamp(3.95rem, 4.25vw, 6.8rem);
+  }
+  /* Speakers container repositioned and PNG increased by 70% */
+  .speakers-container {
+    right: -10px;
+    top: 28px;
+  }
+  .speakers-container img {
+    width: clamp(8.2rem, 6.8vw, 11.05rem);
+    height: clamp(4.25rem, 4.25vw, 6.8rem);
+  }
+  .element-top-right {
+    max-width: clamp(55px, 8vw, 60px);
+    top: 10%;
+    right: 3%;
+  }
+  .element-bottom-left {
+    max-width: clamp(55px, 8vw, 60px);
+    bottom: 13%;
+    left: 3%;
   }
 }
 
@@ -549,64 +613,83 @@
     width: 55%;
   }
   .text2 {
-    left: -35px;
+    left: -32px;
+  }
+  .year-container25 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 375px;
+    padding: 20px;
+  }
+  .year25 {
+    width: 100%;
+    gap: 0.2rem;
   }
   .month {
-    font-size: 1.9rem;
+    font-size: clamp(1.8rem, 6vw, 1.9rem);
     letter-spacing: 0.1rem;
-    line-height: 1.6;
-    margin-top: -0.6rem;
+    line-height: 1.5;
+    margin-top: 2rem;
   }
+  /* Month PNG increased by 70% */
   .month img {
-    width: 6.5rem;
-    height: 4rem;
+    width: clamp(9.5rem, 55vw, 10rem);
+    height: clamp(3.5rem, 18vw, 4rem);
+    
   }
   .zero {
-    font-size: 5rem;
+    font-size: clamp(4.8rem, 13vw, 5rem);
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Zero PNG increased by 70% */
+  .zero img {
+    width: clamp(1rem, 50vw, 15rem);
+    height: clamp(6.5rem, 16vw, 7rem);
   }
   .full-year {
-    font-size: 1.9rem;
-    letter-spacing: 0.6rem;
-    line-height: 2.5;
-    top: 15px; /* Adjusted for smallest screens */
+    font-size: clamp(1.8rem, 6vw, 1.9rem);
+    letter-spacing: 0.55rem;
+    line-height: 2.4;
+    top: -30px;
   }
+  /* Full year PNG increased by 70% */
   .full-year img {
-    width: 6.5rem;
-    height: 4rem;
+    width: clamp(7rem, 55vw, 8.5rem);
+    height: clamp(4.5rem, 18vw, 6.5rem);
   }
   .tagline25 {
-    font-size: 15px;
+    font-size: clamp(14px, 4vw, 15px);
   }
-  .zero img {
-    width: 7.5rem;
-    height: 4.5rem;
-  }
-  .speakers-container img{
-    width: 6.5rem;
-    height: 4rem;
-  }
-    .cultural-container img {
-    width: 6.5rem;
-    height: 4rem;
-  }
+  /* Cultural container repositioned and PNG increased by 70% */
   .cultural-container {
-    left: 3px;
-    top: 60%;
+    left: 0px;
+    top: 87px;
   }
+  .cultural-container img {
+    width: clamp(8.2rem, 6.8vw, 11.05rem);
+    height: clamp(3.95rem, 4.25vw, 6.8rem);
+  }
+  /* Speakers container repositioned and PNG increased by 70% */
   .speakers-container {
-    right: 35px;
-    top: -25px;
+    right: -10px;
+    top: 28px;
   }
-
+  .speakers-container img {
+    width: clamp(8.2rem, 6.8vw, 11.05rem);
+    height: clamp(4.25rem, 4.25vw, 6.8rem);
+  }
   .element-top-right {
-    max-width: 60px;
-    top: 12%;
-    right: 2%;
+    max-width: clamp(55px, 8vw, 60px);
+    top: 10%;
+    right: 3%;
   }
-
   .element-bottom-left {
-    max-width: 60px;
-    bottom: 15%;
-    left: 2%;
+    max-width: clamp(55px, 8vw, 60px);
+    bottom: 13%;
+    left: 3%;
   }
 }

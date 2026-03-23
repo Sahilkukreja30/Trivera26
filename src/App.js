@@ -12,7 +12,7 @@ import TeamSection from "./Components/shubhansh files/TeamSection"
 import Subh from "./Components/Subhanshpage/Subh";
 
 import React, { useState, useEffect } from 'react';
-import Buy from './Components/Buynow/Buy';
+// import Buy from './Components/Buynow/Buy';
 import Layout from './Components/Buynow/Layout';
 import ScrollToTop from './ScrollToTop';
 import Guidelines from './2025-Components/Guidelines/Guidelines';
@@ -80,7 +80,7 @@ function App() {
         <Router>
           <ScrollToTop/>
           <Navbar />
-          <Buy />
+          {/* <Buy /> */}
           {/* <TicketPopup /> */}
           <Layout>
             <Routes>
