@@ -75,8 +75,9 @@
 
 .year-container25 {
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
+  width: 70%;
   transform: translate(-50%, -50%);
   background-color: #2d2884;
   z-index: 2;
@@ -92,7 +93,7 @@
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 0.5rem;
  top: 50%;
  top: 50%;
 }
@@ -106,46 +107,38 @@
   letter-spacing: 0.5rem;
   line-height: 1.4;
   opacity: 0.6;
-  margin-top: -2.5rem;
+  margin-top: 0rem;
 }
 .month img {
-  width: 200rem;
-  height: 15rem;
+  width: 220rem;
+  height: 12rem;
 }
 .zero {
-  font-size: 18rem;
-  font-size: 18rem;
   transition: opacity 1s ease-out;
-  letter-spacing: 0rem;
-  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 /* In your CSS file */
 .zero img {
-  width: 240rem;
+  width: 340rem;
   height: 21rem;
 }
 .full-year{
-  font-size: 7rem;
   position: relative;
-  letter-spacing: 2rem;
-  line-height: 3.8;
-  font-weight: 800;
   opacity: 0.6;
-  margin-top: 7rem;
+  margin-top: 11rem;
  
 }
 
 .full-year img {
-  width: 200rem;
-  height: 17rem;
+  width: 220rem;
+  height: 12rem;
 }
 
 .cultural-container {
   position: absolute;
-  left: -100px;
+  left: 20px;
   top: 45%;
   display: flex;
   flex-direction: column;
@@ -158,8 +151,8 @@
 
 .speakers-container {
   position: absolute;
-  right: -80px;
-  top: -85px;
+  right: 35px;
+  top: -10px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -255,9 +248,10 @@
     left: -130px;
   }
   .year-container25 {
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: auto;
   }
   .month {
     font-size: 5.5rem;
@@ -277,7 +271,7 @@
   }
   .zero img {
     width: clamp(16rem, 7vw, 20rem);
-    height: clamp(11rem, 5vw, 14rem);
+    height: clamp(10rem, 5vw, 14rem);
   }
   .speakers-container img {
     width: clamp(14rem, 6vw, 18rem);
@@ -543,7 +537,7 @@
     font-size: clamp(1.8rem, 6vw, 1.9rem);
     letter-spacing: 0.1rem;
     line-height: 1.5;
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   /* Month PNG increased by 70% */
   .month img {
@@ -567,7 +561,7 @@
     font-size: clamp(1.8rem, 6vw, 1.9rem);
     letter-spacing: 0.55rem;
     line-height: 2.4;
-    top: -30px;
+    top: -4rem;
   }
   /* Full year PNG increased by 70% */
   .full-year img {
@@ -580,7 +574,7 @@
   /* Cultural container repositioned and PNG increased by 70% */
   .cultural-container {
     left: 0px;
-    top: 87px;
+    top: 120px;
   }
   .cultural-container img {
     width: clamp(8.2rem, 6.8vw, 11.05rem);
@@ -589,7 +583,7 @@
   /* Speakers container repositioned and PNG increased by 70% */
   .speakers-container {
     right: -10px;
-    top: 28px;
+    top: 60px;
   }
   .speakers-container img {
     width: clamp(8.2rem, 6.8vw, 11.05rem);
@@ -630,7 +624,7 @@
     font-size: clamp(1.8rem, 6vw, 1.9rem);
     letter-spacing: 0.1rem;
     line-height: 1.5;
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   /* Month PNG increased by 70% */
   .month img {
@@ -654,7 +648,7 @@
     font-size: clamp(1.8rem, 6vw, 1.9rem);
     letter-spacing: 0.55rem;
     line-height: 2.4;
-    top: -30px;
+    top: -4rem;
   }
   /* Full year PNG increased by 70% */
   .full-year img {
@@ -667,7 +661,7 @@
   /* Cultural container repositioned and PNG increased by 70% */
   .cultural-container {
     left: 0px;
-    top: 87px;
+    top: 120px;
   }
   .cultural-container img {
     width: clamp(8.2rem, 6.8vw, 11.05rem);
@@ -676,7 +670,7 @@
   /* Speakers container repositioned and PNG increased by 70% */
   .speakers-container {
     right: -10px;
-    top: 28px;
+    top: 60px;
   }
   .speakers-container img {
     width: clamp(8.2rem, 6.8vw, 11.05rem);
