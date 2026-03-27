@@ -6,6 +6,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import linkedin from "../Assests/Images/linkedin.png";
 import instagram from "../Assests/Images/instagram (2).png";
 import coming from "../Assests/Images/rev.png";
+import artistTalkImg from "../../Images/artistTalk.jpg";
+import fleaMarketImg from "../../Images/fleaMarket.jpg";
+import culturalPerfImg from "../../Images/culturaPerformance.jpg";
+import sufiNightImg from "../../Images/sufiNight.jpg";
+import standUpImg from "../../Images/standUpComedy.jpg";
+import theatreImg from "../../Images/theatrePlays.jpg";
+
+
+
 
 const speakerData2024 = [
   {
@@ -180,65 +189,74 @@ const speakerData2023 = [
 ];
 const speakerData2025 = [
   {
-    name: "Battle of",
-    surname: "Bands",
-    designation: "Tech Educator, Software Engineer & Content Creator",
+    name: "Artist",
+    surname: "Talk Shows",
+    designation: "Creators sharing their journeys and defining moments.",
     description:
-      "Hiten Lulla, founder of Hiten.Codes, simplifies coding through engaging tech education. A YouTube creator and GitHub contributor, he empowers learners by making technology accessible and fun.",
-    image: "https://imgur.com/aiwzOhi.png",
-    instagramLink: "https://www.instagram.com/hiten.codes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-    linkedinLink: "https://www.linkedin.com/in/hiten-lulla-a434201aa/?originalSubdomain=in",
+      "Join us for intimate, fireside-style conversations with industry pioneers, viral creators, and celebrated alumni. They will be spilling the tea on their creative processes, breaking down their biggest failures, and sharing actionable advice for aspiring artists. This is your chance to participate in interactive Q&As, ask your burning questions, and get inspired by the people who have walked the path before you.",
+    image: artistTalkImg,
+    instagramLink:
+      "https://www.instagram.com/hiten.codes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    linkedinLink:
+      "https://www.linkedin.com/in/hiten-lulla-a434201aa/?originalSubdomain=in",
   },
   {
     name: "Stand-up",
     surname: "Comedy",
-    designation: "Digital Nomad & Content Creator",
+    designation: "Turning everyday chaos into punchlines",
     description:
-      "Shreya Mahendru inspires remote work and travel through Instagram and YouTube. She shares freelancing insights to help others embrace a location-independent lifestyle.",
-    image: "https://imgur.com/Dpwk6oF.png",
-    instagramLink: "https://www.instagram.com/shreyamahendru_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-    linkedinLink: "https://www.linkedin.com/in/shreyamahendru/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in",
+      "Get ready for an evening of relentless laughter as top-tier comedians and the funniest student talents take the stage! They will be serving up hilarious takes on college life, awkward encounters, exam panic, and the absolute absurdity of adulting. Grab your friends, leave your stress at the door, and prepare for side-splitting sets that will have you rolling in the aisles.",
+    image: standUpImg,
+    instagramLink:
+      "https://www.instagram.com/shreyamahendru_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    linkedinLink:
+      "https://www.linkedin.com/in/shreyamahendru/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in",
   },
   {
-    name: "Nukkad",
-    surname: "Natak",
-    designation: "Consultant Embryologist & Sexual Health Expert",
+    name: "Theatre",
+    surname: "Plays",
+    designation: "Live emotion, drama, and unforgettable narratives.",
     description:
-      "Dr. Prateek Makwana leads Vasundhara Hospital Ltd. and Vasundhara IVF. He educates the public through Medical Scribbles, TEDx, and social media, simplifying fertility and sexual health topics for informed decision-making.",
-    image: "https://imgur.com/Z32CbN5.png",
-    instagramLink: "https://www.instagram.com/fertility_scribbles?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-    linkedinLink: "https://www.linkedin.com/in/dr-prateek-makwana-10132a18b/?originalSubdomain=in",
+      "Witness the raw, unfiltered energy of live acting as talented college drama societies and guest theatre troupes present thought-provoking masterpieces. From gripping social satires and intense modern tragedies to light-hearted contemporary comedies, our stage will host a full spectrum of human emotion. Come be part of the audience that experiences the magic of storytelling right before their eyes.",
+    image: theatreImg,
+    instagramLink:
+      "https://www.instagram.com/fertility_scribbles?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    linkedinLink:
+      "https://www.linkedin.com/in/dr-prateek-makwana-10132a18b/?originalSubdomain=in",
   },
   {
     name: "Sufi",
     surname: "Night",
-    designation: "Wildlife Conservationist & Storyteller",
+    designation: "Soulful music and melodies that echo.",
     description:
-      "Kayden Anthony, The Man of the Forest, turns wildlife conservation into a fun, engaging journey. Through storytelling, he educates and inspires communities to protect nature with fresh, playful insights.",
-    image: "https://imgur.com/TID0bLe.png",
-    instagramLink: "https://www.instagram.com/man_of_the_forest_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-    linkedinLink: "https://www.linkedin.com/in/kayden-anthony/?originalSubdomain=in",
+      "Step into a magical, starlit arena where renowned musicians and vocalists will weave a tapestry of divine devotion and love. Experience the hypnotic rhythms of the tabla and the soaring high notes of classical instruments as legendary Sufi kalams are brought to life. It’s the perfect, peaceful sanctuary to unwind, reflect, and let the mystical vibes take over your soul.",
+    image: sufiNightImg,
+    instagramLink:
+      "https://www.instagram.com/man_of_the_forest_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    linkedinLink:
+      "https://www.linkedin.com/in/kayden-anthony/?originalSubdomain=in",
   },
   {
-    name: "cultural",
-    surname: "Performance",
-    designation: "Additional Deputy Commissioner of Police (DCP),   Cybercrime Expert, Motivational Speaker",
+    name: "Flea",
+    surname: "Market",
+    designation: "Food, crafts, games, and quirky finds.",
     description:
-      "Rajesh Dandotiya is a cybersecurity expert and crime investigator. He leads initiatives like the “Digital Cop Program” and has also received global recognition for his contributions to law enforcement, mentoring, and cybercrime awareness.",
-    image: "https://imgur.com/EJ81B5R.png",
+      "Celebrate the incredible diversity of our student body and guest performers in this high-energy, colorful showcase! Watch synchronized classical choreographies seamlessly transition into explosive Bhangra, graceful contemporary pieces, and electrifying folk music fusions. Dress in your ethnic best, cheer for your favorite college teams, and celebrate the rich heritage that binds us all together.",
+    image: fleaMarketImg,
     instagramLink: "https://www.instagram.com/rajeshdandotiyaasp/?hl=en",
-    linkedinLink: "https://www.linkedin.com/in/dandotiyarajesh/?originalSubdomain=in",
+    linkedinLink:
+      "https://www.linkedin.com/in/dandotiyarajesh/?originalSubdomain=in",
   },
   {
-    name: "Reel",
-    surname: "Making",
-    designation: "Co-founder & Spiritual Mentor, Nimai Pathshala",
+    name: "Cultural",
+    surname: "Performance",
+    designation: "Celebrating traditions in their most vibrant forms.",
     description:
-      "Renuka Pundrik Goswami is the co-founder of Nimai Pathshala, dedicated to promoting dharmic values among youth. She actively advocates for spiritual growth, ethical living, and social transformation",
-    image: "https://imgur.com/0bfe6lJ.png",
+      "Celebrate the incredible diversity of our student body and guest performers in this high-energy, colorful showcase! Watch synchronized classical choreographies seamlessly transition into explosive Bhangra, graceful contemporary pieces, and electrifying folk music fusions. Dress in your ethnic best, cheer for your favorite college teams, and celebrate the rich heritage that binds us all together.",
+    image: culturalPerfImg,
     instagramLink: "https://www.instagram.com/renuka.goswami.108/?hl=en",
     linkedinLink: "",
-  }
+  },
 ];
 
 const SliderComponent = () => {
@@ -282,8 +300,8 @@ const SliderComponent = () => {
           Math.round(
             ((window.scrollY - slider.offsetTop) /
               (slider.offsetHeight - window.innerHeight)) *
-              100
-          )
+              100,
+          ),
         );
         sliderStyles.setProperty("--scroll-perc", scrollPerc);
         velocity = clamp(self.getVelocity() / -300);
@@ -301,7 +319,7 @@ const SliderComponent = () => {
               // Scroll direction
               sliderStyles.setProperty(
                 "--scroll-y",
-                proxy.velocity > 0 ? 1 : -1
+                proxy.velocity > 0 ? 1 : -1,
               );
 
               // Scroll velocity
@@ -312,7 +330,7 @@ const SliderComponent = () => {
               gsap.set(title, {
                 skewX: `${proxy.velocity * 5}deg`,
                 x:
-                (-scrollPerc / 100) * (title.offsetWidth - window.innerWidth),
+                  (-scrollPerc / 100) * (title.offsetWidth - window.innerWidth),
               });
             },
           });
@@ -371,7 +389,7 @@ const SliderComponent = () => {
         });
 
         gsap.to(nameRef.current, {
-          xPercent: -190,
+          xPercent: -110,
           duration: 1,
           scrollTrigger: {
             trigger: nameRef.current.closest(".o-slider__item"),

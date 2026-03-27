@@ -2,6 +2,9 @@ h1,
 body {
   margin: 0;
 }
+body{
+  overflow-x: hidden;
+}
 button:focus {
   outline: 0;
 }
@@ -174,17 +177,20 @@ z-index: 0;
 .speaker-name {
   position: absolute;
 
+  left: 100%;        /* start just outside right edge */
+  max-width: 90%;    /* ADD: prevents oversized text */
+  font-size: clamp(32px, 4.5vw, 72px);  /* CHANGE: was fixed 72px */
+  line-height: 1.1;
+
   z-index: 15;
   top: 9%;
-  width: 25vw;
   text-align: right;
-  line-height: 80px;
+  width: max-content; /* prevents wrapping mid-animation */
 
-  left: 130%;
 
   color: #ffffff;
-  font-size: 72px;
   font-weight: 700;
+
 }
 
 .speaker-name p {
@@ -329,13 +335,19 @@ z-index: 0;
 @media (max-width: 1280px) {
   .o-slider {
     --title-size: calc(1 / 5 * 100vh);
+    overflow-x: hidden;
   }
   .speaker-name {
     font-size: 45px;
     line-height: 45px;
   }
   .o-slider__img{
-    top: 50%;
+    width: min(280px, 40%); /* was fixed 300px */
+    top: 5%;
+    left: 5%;
+    max-height: 55%;
+    object-fit: cover;
+    transform: translateX(-50%); /* center it instead of hardcoded left */
   }
   .speaker-name p {
     font-size: 25px;

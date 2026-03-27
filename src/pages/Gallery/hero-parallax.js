@@ -1,29 +1,21 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import HeroParallax2 from "./hero-parallax-mobile";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-} from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Breakpoint, BreakpointProvider } from "react-socks";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-
-
+import stickerImg from "../../Images/12.png"; 
 
 
 export const HeroParallax = ({ products }) => {
-  
-  const firstRow = products.slice(0,5);
+  const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
   const fourthRow = products.slice(15, 20);
   const fifthRow = products.slice(20, 25);
-  const sixthRow = products.slice(25,30);
- 
-  
+  const sixthRow = products.slice(25, 30);
+
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -32,173 +24,208 @@ export const HeroParallax = ({ products }) => {
 
   const springConfig = { stiffness: 300, damping: 150, bounce: 1 };
   const scrollChange = useSpring(
-    useTransform(scrollYProgress, [500,1000], [0, 500]),
+    useTransform(scrollYProgress, [500, 1000], [0, 500]),
     springConfig,
   );
 
   console.log(scrollChange);
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, 3000]),
-    springConfig
+    springConfig,
   );
-  
+
   const translateX3 = useSpring(
     useTransform(scrollYProgress, [0, 1], [-1000, 2000]),
-    springConfig
+    springConfig,
   );
 
   const translateX5 = useSpring(
     useTransform(scrollYProgress, [0, 1], [-2000, 1000]),
-    springConfig
+    springConfig,
   );
 
   const translateXReverse = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, -2500]),
-    springConfig
+    springConfig,
   );
   const translateXReverse4 = useSpring(
     useTransform(scrollYProgress, [0, 1], [1000, -1500]),
-    springConfig
-  );  
+    springConfig,
+  );
   const translateX6 = useSpring(
     useTransform(scrollYProgress, [0, 1], [2000, -100]),
-    springConfig
+    springConfig,
   );
   const rotateX = useSpring(
     useTransform(scrollYProgress, [0, 0.2], [15, 0]),
-    springConfig
+    springConfig,
   );
   const opacity = useSpring(
     useTransform(scrollYProgress, [0, 0.1], [0.5, 1]),
-    springConfig
+    springConfig,
   );
   const rotateZ = useSpring(
     useTransform(scrollYProgress, [0, 0.4], [30, 0]),
-    springConfig
+    springConfig,
   );
   const translateY = useSpring(
     useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
-    springConfig
+    springConfig,
   );
 
-  
-
-
   return (
-    
-    
-      <BreakpointProvider>
-      
+    <BreakpointProvider>
       <Breakpoint medium up>
-      <div
-      ref={ref}
-      className="h-fit overflow-hidden mb-0 pb-0 bg-black pt-96  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
-    >
-      <Header />
-      <motion.div
-        style={{
-          rotateX,
-          rotateZ,
-          translateY,
-          opacity,
-        }}
-        className="mb-0 z-10"
-      >
-        <motion.div className="FIRST flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="SECOND flex flex-row  mb-20 space-x-20 ">
-          {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="THIRD flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX3}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        
-      </motion.div>
-      <motion.div className="FOURth row flex flex-row mt-[95vh] space-x-20 ">
-          {fourthRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse4}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="FIFTH flex flex-row-reverse mt-24 space-x-reverse space-x-20">
-          {fifthRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX5}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="FIFTH flex flex-row-reverse -translate-y-4 mt-24 space-x-reverse space-x-20">
-          {sixthRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX6}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
+        <div
+          ref={ref}
+          className="h-fit overflow-hidden mb-0 pb-0 bg-black pt-96  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+          style={{ backgroundColor: "#2d2884" }}
+        >
+          <Header />
+          <motion.div
+            style={{
+              rotateX,
+              rotateZ,
+              translateY,
+              opacity,
+            }}
+            className="mb-0 z-10"
+          >
+            <motion.div className="FIRST flex flex-row-reverse space-x-reverse space-x-20 mb-20">
+              {firstRow.map((product) => (
+                <ProductCard
+                  product={product}
+                  translate={translateX}
+                  key={product.title}
+                />
+              ))}
+            </motion.div>
+            <motion.div className="SECOND flex flex-row  mb-20 space-x-20 ">
+              {secondRow.map((product) => (
+                <ProductCard
+                  product={product}
+                  translate={translateXReverse}
+                  key={product.title}
+                />
+              ))}
+            </motion.div>
+            <motion.div className="THIRD flex flex-row-reverse space-x-reverse space-x-20">
+              {thirdRow.map((product) => (
+                <ProductCard
+                  product={product}
+                  translate={translateX3}
+                  key={product.title}
+                />
+              ))}
+            </motion.div>
+          </motion.div>
+          <motion.div className="FOURth row flex flex-row mt-[95vh] space-x-20 ">
+            {fourthRow.map((product) => (
+              <ProductCard
+                product={product}
+                translate={translateXReverse4}
+                key={product.title}
+              />
+            ))}
+          </motion.div>
+          <motion.div className="FIFTH flex flex-row-reverse mt-24 space-x-reverse space-x-20">
+            {fifthRow.map((product) => (
+              <ProductCard
+                product={product}
+                translate={translateX5}
+                key={product.title}
+              />
+            ))}
+          </motion.div>
+          <motion.div className="FIFTH flex flex-row-reverse -translate-y-4 mt-24 space-x-reverse space-x-20">
+            {sixthRow.map((product) => (
+              <ProductCard
+                product={product}
+                translate={translateX6}
+                key={product.title}
+              />
+            ))}
+          </motion.div>
+          <img
+            src={stickerImg}
+            alt="sticker"
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              width: "400px",
+              zIndex: 0,
+              pointerEvents: "none"
+            }}
+          />
         </div>
-  </Breakpoint>
+      </Breakpoint>
       <Breakpoint small down>
-        <HeroParallax2 products={products}/>
+        <HeroParallax2 products={products} />
       </Breakpoint>
     </BreakpointProvider>
-    
   );
 };
 
 export default HeroParallax;
 
 export const Header = () => {
+  useEffect(() => {
+    gsap.fromTo('.glimpse-word', {
+      y: 140,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1,
+      stagger: { each: 0.1 },
+      delay: 0.05,
+      duration: 1.5,
+      ease: "elastic.out(1,0.9)",
+    });
+  }, []);
+
   return (
-    <div className="max-w-7xl z-50 py-60 mx-auto px-4 w-full  left-0 top-0">
-       <h1 className="text-8xl h-72 right-10 top-40 absolute p-0 font-[Poppins]  dark:text-white"><span className="text-[#eb0028] poppins-bold">HIGH</span>LIGHTS</h1>
-       
-      </div>
+    <div className="max-w-7xl z-50 py-60 mx-auto px-4 w-full left-0 top-0">
+      <h1 style={{ 
+        fontFamily: "Helvetica, Arial, sans-serif",
+        fontWeight: "900",
+        display: "flex",
+        flexDirection: "row",
+        overflow: "hidden"
+      }} className="text-8xl h-72 right-10 top-40 absolute p-0">
+        {'PAST '.split('').map((char, index) => (
+          <div key={index} className='glimpse-word' style={{ color: "#A5D761" }}>
+            {char === ' ' ? '\u00A0' : char}
+          </div>
+        ))}
+        {'GLIMPSES'.split('').map((char, index) => (
+          <div key={index} className='glimpse-word' style={{ color: "#ffffff" }}>
+            {char === ' ' ? '\u00A0' : char}
+          </div>
+        ))}
+      </h1>
+    </div>
   );
 };
 
 export const ProductCard = ({ product, translate }) => {
   return (
     <motion.div
-      
       style={{
         x: translate,
       }}
       whileHover={{
-        scale:1.02,
+        scale: 1.02,
       }}
       key={product.title}
       className="group/product rounded-xl overflow-hidden h-96 w-[30rem] relative flex-shrink-0"
     >
       <a
-        href='javascript:void(0)'
+        href="javascript:void(0)"
         className="block rounded-xl group-hover/product:shadow-2xl"
       >
-        <img loading="lazy"
+        <img
+          loading="lazy"
           src={product.thumbnail}
           height="600"
           width="600"

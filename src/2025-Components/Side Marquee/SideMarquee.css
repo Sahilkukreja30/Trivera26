@@ -1,3 +1,21 @@
-.SideMarqueeContainer{
-    /* width: 300dvh; */
+.side-marquee-sticker {
+    position: fixed;
+    top: 0;
+    left: 14px;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    pointer-events: none;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.55));
+    transform-origin: center center;
+    z-index: 60;
+    will-change: transform;
+    opacity: 0;             /* hidden by default */
+    visibility: hidden;     /* hidden by default */
+}
+
+@media screen and (max-width: 768px) {
+    .side-marquee-sticker {
+        display: none;
+    }
 }

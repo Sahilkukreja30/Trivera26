@@ -1,58 +1,76 @@
 import './SideMarquee.css';
-import gsap from 'gsap'
-import React, { useEffect, useRef, useState } from 'react'
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from 'react';
+import cameraSticker from '../../Images/60.png';
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 const SideMarquee = (props) => {
-
-    const sideMarqueeText = useRef(null);
-    const sideMarqueeText2 = useRef(null);
-    const [pageHeight, setPageHeight] = useState(null);
+    const stickerRef = useRef(null);
+    const containerRef = useRef(null);
     let isRight = props.isRight;
-    
-    useEffect(() => {
-
-        setPageHeight(document.documentElement.offsetHeight);
-
-        gsap.fromTo([sideMarqueeText.current, sideMarqueeText2.current],{
-            y: 0,
-            rotate: -90,
-            x: isRight? -195 : -205,
-            
-        },{
-            // y: `${document.documentElement.offsetHeight}`,
-            y: isRight ? '450dvh' :'6000px',
-            rotate: -90,
-            x: isRight? -195 : -205,
-            duration: 30,
-            repeat: -1,
-            ease: 'none'
-        })
-
-    },[])
 
     useEffect(() => {
-        setPageHeight(document.documentElement.offsetHeight)
-    },[document.documentElement.offsetHeight])
+        if (stickerRef.current) {
 
-    
-    console.log(document.documentElement.offsetHeight);
-    return ( 
-    <div style={{
-        height: isRight ? `400dvh`: '6000px',
-        // height: `${pageHeight}px`,
-      }}
-    className={` w-7 SideMarqueeContainer  overflow-y-clip invisible md:visible ${isRight? 'right-2 absolute top-0' : 'left-10 absolute'} z-50 border-l-[1px] border-l-slate-200`}>
-        {/* <div  className=' h-[1px] bg-white absolute top-[45%]'></div> */}
-        
-        <div ref={sideMarqueeText} className=' text-slate-300 px-2 relative z-40 bg-black h-fit w-max text-[12px]'>
-            {isRight ?  'PEELING BACK THE LAYERS TO REVEAL THE ESSENCE OF SELF' : ' MOMENTS THAT REFLECT THE UNSPOKEN STORIES OF HUMANITY'}
-        </div>
+            // Show/hide based on About section visibility
+            ScrollTrigger.create({
+                trigger: containerRef.current,
+                start: 'top bottom',
+                end: 'bottom top',
+                onEnter: () => gsap.set(stickerRef.current, { autoAlpha: 1 }),
+                onLeave: () => gsap.set(stickerRef.current, { autoAlpha: 0 }),
+                onEnterBack: () => gsap.set(stickerRef.current, { autoAlpha: 1 }),
+                onLeaveBack: () => gsap.set(stickerRef.current, { autoAlpha: 0 }),
+            });
 
-        <div ref={sideMarqueeText2} className={`  mt-[-200dvh] text-slate-300 px-2 relative z-40 bg-black h-fit w-max text-[12px]`}>
-            {isRight ?  '' : ' MOMENTS THAT REFLECT THE UNSPOKEN STORIES OF HUMANITY'}
-        </div>
-    </div>
-  )
-}
+            // Scroll animation
+            gsap.fromTo(stickerRef.current,
+    { y: 0, rotate: 0, scale: 0.85 },
+    {
+        y: () => containerRef.current.offsetHeight * 0.3,
+        rotate: 0,
+        scale: 1.05,
+        ease: 'none',
+        scrollTrigger: {
+            trigger: containerRef.current,  // back to containerRef
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 15,
+        }
+    }
+);
 
-export default SideMarquee
+            // Wobble
+            gsap.to(stickerRef.current, {
+                rotate: '+=3',
+                duration: 1.8,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut',
+            });
+        }
+    }, []);
+
+    return (
+        <>
+            {/* The line */}
+            <div ref={containerRef} style={{
+                height: isRight ? `400dvh` : '6000px',
+            }}
+            className={`w-[1px] SideMarqueeContainer invisible lg:visible ${isRight ? 'right-6 absolute top-0' : 'left-14 absolute'} z-50 bg-slate-200`} />
+
+            {/* Sticker */}
+            <img
+                ref={stickerRef}
+                src={cameraSticker}
+                alt="camera sticker"
+                className="side-marquee-sticker invisible lg:visible"
+            />
+        </>
+    );
+};
+
+export default SideMarquee;

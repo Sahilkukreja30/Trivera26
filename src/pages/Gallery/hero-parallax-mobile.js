@@ -6,6 +6,8 @@ import {
   useTransform,
   useSpring,
 } from "framer-motion";
+import gsap from "gsap";
+import stickerImg from "../../Images/12.png"; 
 
 
 export const HeroParallax2 = ({ products }) => {
@@ -100,75 +102,57 @@ export const HeroParallax2 = ({ products }) => {
   return (
     <div
       ref={ref}
-      style={{ height }}
-      className="py-40 overflow-hidden bg-black  antialiased relative  flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      style={{ height, backgroundColor: "#2d2884" }}
+      className="py-40 overflow-hidden antialiased relative flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
-      <Header />
-      <div className="absolute z-10"><motion.div
+      <img 
+        src={stickerImg} 
+        alt="sticker"
         style={{
-          rotateX,
-          rotateZ,
-          translateY,
-          opacity,
+          position: "absolute",
+          top: "20px",
+          right: "0px",
+          width: "120px",
+          zIndex: 0,
+          pointerEvents: "none"
         }}
-        className=""
-      >
-        <motion.div className="FIRST flex flex-row-reverse -translate-y-3 mt-[95vh] w-screen space-x-reverse space-x-5">
-          {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
+      />
+      <Header />
+      <div className="absolute z-10">
+        <motion.div
+          style={{ rotateX, rotateZ, translateY, opacity }}
+        >
+          <motion.div className="FIRST flex flex-row-reverse -translate-y-3 mt-[95vh] w-screen space-x-reverse space-x-5">
+            {firstRow.map((product) => (
+              <ProductCard product={product} translate={translateX} key={product.title} />
+            ))}
+          </motion.div>
+          <motion.div className="SECOND flex translate-y-3 flex-row space-x-5">
+            {secondRow.map((product) => (
+              <ProductCardLandscape product={product} translate={translateXReverse} key={product.title} />
+            ))}
+          </motion.div>
+          <motion.div className="THIRD flex -translate-x-80 -translate-y-4 flex-row-reverse space-x-reverse space-x-5">
+            {thirdRow.map((product) => (
+              <ProductCard product={product} translate={translateXThird} key={product.title} />
+            ))}
+          </motion.div>
+          <motion.div className="FOURTH flex translate-y-5 flex-row space-x-5">
+            {fourthRow.map((product) => (
+              <ProductCardLandscape product={product} translate={translateXReverseFourth} key={product.title} />
+            ))}
+          </motion.div>
+          <motion.div className="FIFTH flex -translate-x-80 -translate-y-6 flex-row-reverse space-x-reverse space-x-5">
+            {fifthRow.map((product) => (
+              <ProductCard product={product} translate={translateXFIFTH} key={product.title} />
+            ))}
+          </motion.div>
+          <motion.div className="FIFTH flex -translate-x-80 -translate-y-14 flex-row-reverse space-x-reverse space-x-5">
+            {sixthRow.map((product) => (
+              <ProductCard product={product} translate={translateX6} key={product.title} />
+            ))}
+          </motion.div>
         </motion.div>
-        <motion.div className="SECOND flex translate-y-3 flex-row space-x-5">
-          {secondRow.map((product) => (
-            <ProductCardLandscape
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="THIRD flex -translate-x-80 -translate-y-4 flex-row-reverse space-x-reverse space-x-5">
-          {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXThird}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="FOURTH flex translate-y-5 flex-row space-x-5">
-          {fourthRow.map((product) => (
-            <ProductCardLandscape
-              product={product}
-              translate={translateXReverseFourth}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="FIFTH flex -translate-x-80 -translate-y-6  flex-row-reverse space-x-reverse space-x-5">
-          {fifthRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXFIFTH}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="FIFTH flex -translate-x-80 -translate-y-14 flex-row-reverse space-x-reverse space-x-5">
-          {sixthRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX6}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-      </motion.div>
-      
       </div>
     </div>
   );
@@ -177,41 +161,45 @@ export const HeroParallax2 = ({ products }) => {
 export default HeroParallax2;
 
 export const Header = () => {
-    const ref = React.useRef(null);
-    const springConfig = { stiffness: 200, damping: 150 };
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start start", "end start"],
-      });
-    
-    const rotateX = useSpring(
-      useTransform(scrollYProgress, [0, 0.1], [35, 0]),
-      springConfig,
-    );
-    const rotateZ = useSpring(
-      useTransform(scrollYProgress, [0, 0.2], [20, 0]),
-      springConfig,
-    );
-    
-     
-    const translateY = useSpring(
-        useTransform(scrollYProgress, [0, 0.3], [50, 800]),
-        springConfig,
-  );
+  useEffect(() => {
+    gsap.fromTo('.glimpse-word', {
+      y: 140,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1,
+      stagger: { each: 0.1 },
+      delay: 0.05,
+      duration: 1.5,
+      ease: "elastic.out(1,0.9)",
+    });
+  }, []);
 
   return (
-    <div
-    
-        className="absolute z-[100000] h-28 translate-y-32 mx-auto  bg-transparent px-4  translate-x-10 -translate-y-10">
-       <motion.div
-        style={{
-          rotateX,
-          rotateZ,
-        }}
-        className=""
-      ><h1 className=" text-6xl h-28 text-right font-Poppins text-white"><span className="text-[#eb0028] poppins-bold">HIGH</span>LIGHTS</h1></motion.div>
-       
-      </div>
+    <div style={{ position: "absolute", top: "40vh", left: "10px", zIndex: 100000 }}>
+      <h1 style={{ 
+        fontFamily: "Helvetica, Arial, sans-serif",
+        fontWeight: "900",
+        display: "flex",
+        flexDirection: "column", 
+        fontSize: "36px"
+      }}>
+        <div style={{ display: "flex", flexDirection: "row"}}>
+          {'PAST'.split('').map((char, index) => (
+            <div key={index} className='glimpse-word' style={{ color: "#A5D761" }}>
+              {char}
+            </div>
+          ))}
+        </div>
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          {'GLIMPSES'.split('').map((char, index) => (
+            <div key={index} className='glimpse-word' style={{ color: "#ffffff" }}>
+              {char}
+            </div>
+          ))}
+        </div>
+      </h1>
+    </div>
   );
 };
 
