@@ -45,8 +45,8 @@
 
 .socialmedia{
     display: flex;
-    justify-content: space-between;
-    gap: 0;
+    justify-content: flex-start;
+    gap: 15px;
 }
 .socialmedia img{
     transition: transform 0.3s ease-in-out;

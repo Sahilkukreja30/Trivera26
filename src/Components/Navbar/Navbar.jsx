@@ -13,7 +13,6 @@ const Navbar = () => {
     { label: 'Gallery', href: '/gallery' },
     { label: 'Our Team', href: '/teams-2025' },
     { label: 'Contact Us', href: '/contact' },
-    { label: 'Guidelines', href: '/guideline' },
   ];
 
   return (
@@ -24,10 +23,10 @@ const Navbar = () => {
         items={navItems}
         activeHref={location.pathname}
         ease="power2.out"
-        baseColor="#1a1a1a"           /* hover circle fill = dark */
-        pillColor="#1a1a1a"           /* pill bg on hover = dark */
-        hoveredPillTextColor="#f5f0e8" /* text inside pill on hover = cream */
-        pillTextColor="#1a1a1a"       /* resting text = dark */
+        baseColor="#ffffff"           /* resting text = white */
+        pillColor="#f5f0e8"           /* pill bg on hover = cream */
+        hoveredPillTextColor="#1a1a1a" /* text inside pill on hover = dark */
+        pillTextColor="#ffffff"       /* resting text = white */
         initialLoadAnimation={true}
       />
     </div>
