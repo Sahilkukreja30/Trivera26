@@ -46,7 +46,9 @@ const FrontPage2025 = ({ onScaleComplete }) => {
     }, 250);
 
     const getScrollDistance = () => {
-      return window.innerWidth <= 768 ? 1000 : 2000;
+      if (window.innerWidth <= 768) return 1000;
+      if (window.innerWidth <= 1024) return 1500;
+      return 2000;
     };
 
     // Setup blinking letters effect
@@ -229,7 +231,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
   }, [onScaleComplete]);
 
   return (
-    <div className="main-container25">
+    <div className="main-container25" id="events-section">
       <SideMarquee2 isRight={true} />
       <div ref={containerRef} className="frontpage-container25">
         <div className="landing_2025_stars"></div>
@@ -267,7 +269,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
         {/* this is the last line of the page */}
         <div className="tagline-container25" ref={taglineRef}>
           <div className="tagline25">
-            {Array.from("THE DOOR TO THE WITHIN IS OPEN-STEP THROUGH AND DISCOVER.").map(
+            {Array.from("TIME UNFOLDS HERE — CHOOSE YOUR ERA, CREATE YOUR LEGACY.").map(
               (char, index) => (
                 <span key={index} className="tagline-letter25">
                   {char === " " ? "\u00A0" : char}

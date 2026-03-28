@@ -177,12 +177,12 @@
 
 .element-top-right {
   top: 3%;
-  right: 2%;
+  right: 2.5%;
   max-width: 180px;
 }
 
 .element-bottom-left {
-  bottom: 5%;
+  bottom: 12%;
   left: 2%;
   max-width: 180px;
 }
@@ -192,7 +192,6 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 90%;
   top: 90%;
   transform: translateY(-50%);
   width: 100%;
@@ -292,6 +291,10 @@
   }
   .tagline25 {
     font-size: 30px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 90%;
   }
   .cultural-container {
     left: 10px;
@@ -356,9 +359,15 @@
     gap: 2rem;
   }
   .year-container25 {
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 90%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
   .text25 {
     font-size: 10px;
@@ -370,31 +379,40 @@
   .month {
     font-size: 3.5rem;
     letter-spacing: 0.2rem;
-    margin-top: -1rem;
+    margin-top: 2rem;
   }
   .month img {
-    width: clamp(10rem, 6vw, 11rem);
-    height: clamp(6rem, 4vw, 7rem);
+    width: clamp(12rem, 6vw, 12rem);
+    height: clamp(7rem, 4vw, 7rem);
   }
   .zero {
     font-size: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .zero img {
-    width: clamp(12rem, 6.5vw, 13rem);
-    height: clamp(7rem, 4.5vw, 8rem);
+    width: clamp(15rem, 6.5vw, 17rem);
+    height: clamp(12rem, 4.5vw, 15rem);
+    display: block;
+    margin: 0 auto;
   }
   .full-year {
     font-size: 3.5rem;
     letter-spacing: 1rem;
     line-height: 3;
-    top: 30px;
+    top: -35px;
   }
   .full-year img {
-    width: clamp(10rem, 6vw, 11rem);
-    height: clamp(6rem, 4vw, 7rem);
+    width: clamp(12rem, 6vw, 12rem);
+    height: clamp(7rem, 4vw, 7rem);
   }
   .tagline25 {
     font-size: 25px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 85%;
   }
   .line-overlay25 {
     display: none;
@@ -408,21 +426,21 @@
     height: clamp(6rem, 4vw, 7rem);
   }
   .cultural-container {
-    left: 5px;
-    top: 50%;
+    left: 12%;
+    top: 49%;
   }
   .speakers-container {
-    right: 55px;
-    top: -50px;
+    right: 13%;
+    top: 17%;
   }
   .element-top-right {
     max-width: 110px;
     top: 8%;
-    right: 2%;
+    right: 4%;
   }
   .element-bottom-left {
     max-width: 110px;
-    bottom: 10%;
+    bottom: 18%;
     left: 2%;
   }
 }
@@ -483,6 +501,11 @@
   }
   .tagline25 {
     font-size: clamp(14px, 4vw, 15px);
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 90%;
+    padding: 10px 15px;
   }
   /* Cultural container repositioned and PNG increased by 70% */
   .cultural-container {
@@ -569,8 +592,11 @@
     height: clamp(4.5rem, 18vw, 6.5rem);
   }
   .tagline25 {
-    font-size: clamp(14px, 4vw, 15px);
-  }
+    font-size: clamp(14px, 4vw, 15px);    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 90%;
+    padding: 10px 15px;  }
   /* Cultural container repositioned and PNG increased by 70% */
   .cultural-container {
     left: 0px;
@@ -595,9 +621,9 @@
     right: 3%;
   }
   .element-bottom-left {
-    max-width: clamp(55px, 8vw, 60px);
-    bottom: 13%;
-    left: 3%;
+    max-width: clamp(70px, 8vw, 80px);
+    bottom: 17%;
+    left: 2%;
   }
 }
 
@@ -657,6 +683,11 @@
   }
   .tagline25 {
     font-size: clamp(14px, 4vw, 15px);
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 90%;
+    padding: 10px 15px;
   }
   /* Cultural container repositioned and PNG increased by 70% */
   .cultural-container {
@@ -682,8 +713,8 @@
     right: 3%;
   }
   .element-bottom-left {
-    max-width: clamp(55px, 8vw, 60px);
-    bottom: 13%;
-    left: 3%;
+    max-width: clamp(70px, 8vw, 80px);
+    bottom: 17%;
+    left: 2%;
   }
 }

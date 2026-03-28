@@ -85,6 +85,7 @@ function App() {
           <Layout>
             <Routes>
               <Route path='/' element={<Main />} />
+              <Route path='/events' element={<Main />} />
               <Route path='/gallery' element={<HeroParallax products={productsData} />} />
               <Route path='/sponsors' element={<Subh />} />
               <Route path='/guideline' element={<Guidelines />} />
