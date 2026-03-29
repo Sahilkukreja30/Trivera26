@@ -232,16 +232,14 @@ function App() {
           {/* <TicketPopup /> */}
           <Layout>
             <Routes>
-              <Route path="/" element={<Main />} />
-              <Route
-                path="/gallery"
-                element={<HeroParallax products={productsData} />}
-              />
-              <Route path="/sponsors" element={<Subh />} />
-              <Route path="/guideline" element={<Guidelines />} />
-              <Route path="/teams-2024" element={<TeamSection />} />
-              <Route path="/teams-2023" element={<TeamSection />} />
-              <Route path="/teams-2025" element={<TeamSection />} />
+              <Route path='/' element={<Main />} />
+              <Route path='/events' element={<Main />} />
+              <Route path='/gallery' element={<HeroParallax products={productsData} />} />
+              <Route path='/sponsors' element={<Subh />} />
+              <Route path='/guideline' element={<Guidelines />} />
+              <Route path='/teams-2024' element={<TeamSection />} />
+              <Route path='/teams-2023' element={<TeamSection />} />
+              <Route path='/teams-2025' element={<TeamSection />} />
             </Routes>
           </Layout>
           <Footer />

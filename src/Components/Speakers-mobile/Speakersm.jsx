@@ -581,29 +581,7 @@ const Speakersm = () => {
                 <p className={`mSpeaker-name `}>
                   {speaker.name}
                   <br /> {speaker.surname}
-                  <div className="lin">
-                    {speaker.linkedinLink && (
-                      <a href={speaker.linkedinLink}>
-                        <img
-                          loading="lazy"
-                          className="icon"
-                          src={instagram}
-                          alt=""
-                        />
-                      </a>
-                    )}
-                    &nbsp;
-                    {speaker.instagramLink && (
-                      <a href={speaker.instagramLink}>
-                        <img
-                          loading="lazy"
-                          className="icon"
-                          src={mlinkedin}
-                          alt=""
-                        />
-                      </a>
-                    )}
-                  </div>
+                  
                 </p>
               </div>
             </li>
