@@ -11,7 +11,7 @@ const Navbar = () => {
     { label: 'Home', href: '/' },
     { label: 'Sponsors', href: '/sponsors' },
     { label: 'Gallery', href: '/gallery' },
-    { label: 'Our Team', href: '/teams-2025' },
+    // { label: 'Our Team', href: '/teams-2025' },
     { label: 'Contact Us', href: '/contact' },
   ];
 
