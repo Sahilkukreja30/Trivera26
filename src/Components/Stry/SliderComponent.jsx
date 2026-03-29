@@ -435,27 +435,7 @@ const SliderComponent = () => {
         <p className={`speaker-name  `} ref={nameRef}>
           {name}
           <br /> <span className="sir">{surname} </span> <br />
-          <span className="log">
-            {instagramLink && (
-              <a href={instagramLink}>
-                <img
-                  loading="lazy"
-                  /*style={{ width: "35px" }}*/ src={instagram}
-                  alt=""
-                />
-              </a>
-            )}
-            &nbsp;
-            {linkedinLink && (
-              <a href={linkedinLink}>
-                <img
-                  loading="lazy"
-                  /*style={{ width: "35px" }}*/ src={linkedin}
-                  alt=""
-                />
-              </a>
-            )}
-          </span>
+          
         </p>
       </li>
     );
