@@ -1,11 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
 import { gsap } from "gsap";
+
+// Lazy load images
 import img4 from "../../Images/auto.png";
 import shapeImg from "../../Images/Shape.png";
 
-const DELAY = 2.5; // global start delay in seconds
+const DELAY = 2.5;
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -21,7 +23,6 @@ export default function LandingPage() {
   const ctaRef       = useRef(null);
 
   const loadingRef   = useRef(null);
-
   const guitarRef    = useRef(null);
 
   const orbOrangeRef = useRef(null);
@@ -96,9 +97,14 @@ export default function LandingPage() {
 
       <div className="landing-wrapper" ref={wrapperRef}>
 
-        {/* Background shape layer */}
+        {/* Background shape layer — lazy loaded */}
         <div className="shape-layer">
-          <img src={shapeImg} alt="geometric pattern" />
+          <img
+            src={shapeImg}
+            alt="geometric pattern"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         {/* Background orbs */}
@@ -109,9 +115,14 @@ export default function LandingPage() {
         {/* Sticker badges */}
         <div className="sticker sticker-loading" ref={loadingRef}>LOADING…</div>
 
-        {/* cutout4 → auto slot — right side top */}
+        {/* cutout4 → auto slot — lazy loaded */}
         <span className="emoji emoji-auto" ref={guitarRef}>
-          <img src={img4} alt="cutout 4" />
+          <img
+            src={img4}
+            alt="cutout 4"
+            loading="lazy"
+            decoding="async"
+          />
         </span>
 
         {/* Hero content */}
