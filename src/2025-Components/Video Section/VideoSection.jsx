@@ -260,13 +260,11 @@ const VideoSection = () => {
         style={{ display: "flex", flexDirection: "column", rowGap: "50px" }}
       >
         <h2 className="highlightsText uppercase w-min overflow-clip leading-[55px] lg:leading-[80px] z-40 text-left font-black text-[60px] lg:text-[80px] max-w-[90vw] text-white">
-          Reliving the magic
+          A New Era Unfolds
         </h2>
         <p className="highlightsText text-justify hidden md:block leading-8 max-w-[485px]">
-          Last year's event was nothing short of extraordinary—a perfect blend
-          of creativity, passion, and inspiration! Thrilling talks by our
-          incredible speakers sparked ideas and the energy was contagious, the
-          vibe unmatched—relive the magic through our highlights video!
+        Trivera is here for the very first time—and it’s set to be nothing short of extraordinary! A fresh fusion of creativity, passion, and innovation awaits, where new ideas will spark, energy will rise, and unforgettable moments will be created. Get ready to witness something truly iconic—the beginning of a legacy.
+
         </p>
       </span>
     </div>
