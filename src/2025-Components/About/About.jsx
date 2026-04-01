@@ -59,7 +59,7 @@ const About = () => {
 
   return (
     <>
-      <div className="ABOUT_2025_main bg-black">
+      <div id="about" className="ABOUT_2025_main bg-black">
         <SideMarquee isRight={false} />
 
         <div className="about_section_1">

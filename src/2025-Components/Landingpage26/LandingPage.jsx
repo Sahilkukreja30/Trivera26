@@ -3,9 +3,12 @@ import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
 import { gsap } from "gsap";
 
+
 // Lazy load images
 import img4 from "../../Images/auto.png";
 import shapeImg from "../../Images/Shape.png";
+
+
 
 const DELAY = 2.5;
 
@@ -138,7 +141,12 @@ export default function LandingPage() {
           </p>
 
           <div className="cta-group" ref={ctaRef}>
-            <button className="btn-explore" onClick={() => navigate("/")}>
+            <button 
+             className="btn-explore" 
+             onClick={() => {
+              document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+             }}
+             >
               Explore Events
             </button>
           </div>

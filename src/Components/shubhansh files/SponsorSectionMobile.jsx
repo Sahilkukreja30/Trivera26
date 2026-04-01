@@ -112,13 +112,6 @@ useEffect(() => {
                 </div>
             </Marquee>
 
-            <Marquee speed={80} pauseOnClick={true}>
-                <div className='sponsors-container-Mobile2'>
-                    {sponsor_data?.map((sponsor, index) => (
-                        <Sponsors key={index} className='sponsor_image' Image={sponsor} />
-                    ))}
-                </div>
-            </Marquee>
         </div>
     );
 }
