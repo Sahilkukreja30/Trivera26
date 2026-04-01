@@ -239,30 +239,30 @@ const FrontPage2025 = ({ onScaleComplete }) => {
         <div className="year-container25">
           <span ref={yearRef} className="year25">
             <div ref={culturalRef} className="cultural-container">
-              <img src={CulturalImage} alt="Past & Present" />
+              <img src={CulturalImage} alt="Past & Present" loading="lazy" />
             </div>
             <div className="month">
-              <img src={AprilImage} alt="April" />
+              <img src={AprilImage} alt="April" loading="lazy" />
             </div>
             <span ref={zeroRef} className="zero">
-              <img src={DateImage} alt="Date" />
+              <img src={DateImage} alt="Date" loading="lazy" />
             </span>
             {/* <span className="full-year">2026</span> */}
             <div className="full-year">
-              <img src={YearImage} alt="2026" />
+              <img src={YearImage} alt="2026" loading="lazy" />
             </div>
             <div ref={speakersRef} className="speakers-container">
-              <img src={SpeakersImage} alt="Speakers" />
+              <img src={SpeakersImage} alt="Speakers" loading="lazy" />
             </div>
           </span>
         </div>
 
         {/* Decorative Elements */}
         <div ref={element3Ref} className="decorative-element element-bottom-left">
-          <img src={Element3} alt="Decorative Element 3" />
+          <img src={Element3} alt="Decorative Element 3" loading="lazy" />
         </div>
         <div ref={element4Ref} className="decorative-element element-top-right">
-          <img src={Element4} alt="Decorative Element 4" />
+          <img src={Element4} alt="Decorative Element 4" loading="lazy" />
         </div>
 
         
