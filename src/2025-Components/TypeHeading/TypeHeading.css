@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/coolvetica');
 
 .typing_text_heading {
     font-size: 48px;
-    font-family: "Helvetica, Arial, sans-serif";
-    font-weight: 900;
+    font-family: 'Coolvetica', sans-serif;
+    font-weight: 400; /* coolvetica works best with normal weight */
+    font-style: italic;
     color: #f7fdcf;
     align-self: flex-start;
     z-index: 10;
+    line-height: 1.2;
 }
-
 
 @media screen and (max-width: 480px) {
     .typing_text_heading{

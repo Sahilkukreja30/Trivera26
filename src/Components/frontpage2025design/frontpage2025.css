@@ -6,7 +6,7 @@
 .main-container25 {
   position: relative !important;
   z-index: 3;
-  background-color: #2d2884;
+  background-color: #1d1a53;
   min-height: 100vh;
 }
 
@@ -79,7 +79,7 @@
   left: 50%;
   width: 70%;
   transform: translate(-50%, -50%);
-  background-color: #2d2884;
+  background-color: #1d1a53;
   z-index: 2;
 }
 
@@ -203,7 +203,7 @@
   font-size: 30px;
   font-size: 30px;
   padding: 5px 15px;
-  background-color: #2d2884;
+  background-color: #1d1a53;
   color: white;
   z-index: 3;
   text-transform: uppercase;
