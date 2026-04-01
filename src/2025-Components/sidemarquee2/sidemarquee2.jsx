@@ -44,11 +44,11 @@ const SideMarquee = (props) => {
     className={` w-7 SideMarqueeContainer  overflow-y-clip invisible md:visible ${isRight? 'right-2 absolute top-0' : 'left-10 absolute'} z-50 border-l-[1px] border-l-slate-200`}>
         {/* <div  className=' h-[1px] bg-white absolute top-[45%]'></div> */}
         
-        <div ref={sideMarqueeText} className=' text-slate-300 px-2 relative z-40 bg-black h-fit w-max text-[12px]'>
+        <div ref={sideMarqueeText} className=' text-slate-300 px-1 relative z-40 h-fit w-max text-[12px]'>
             {isRight ?  'PEELING BACK THE LAYERS TO REVEAL THE ESSENCE OF SELF' : ' MOMENTS THAT REFLECT THE UNSPOKEN STORIES OF HUMANITY'}
         </div>
 
-        <div ref={sideMarqueeText2} className={`  mt-[-200dvh] text-slate-300 px-2 relative z-40 bg-black h-fit w-max text-[12px]`}>
+        <div ref={sideMarqueeText2} className={`  mt-[-200dvh] text-slate-300 px-2 relative z-40 bg-[#be0966] h-fit w-max text-[12px]`}>
             {isRight ?  '' : ' MOMENTS THAT REFLECT THE UNSPOKEN STORIES OF HUMANITY'}
         </div>
     </div>
