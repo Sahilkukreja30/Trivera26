@@ -6,7 +6,7 @@
     height: 120px;
     object-fit: contain;
     pointer-events: none;
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.55));
+    filter: drop-shadow(0 4px 12px rgba(46, 20, 179, 0.55));
     transform-origin: center center;
     z-index: 60;
     will-change: transform;

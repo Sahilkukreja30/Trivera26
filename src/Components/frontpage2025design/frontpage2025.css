@@ -80,7 +80,9 @@
   width: 70%;
   transform: translate(-50%, -50%);
   background-color: #1d1a53;
+  padding: 10px;
   z-index: 2;
+  height: auto;
 }
 
 .year25 {
@@ -251,6 +253,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: auto;
+    height: auto;
   }
   .month {
     font-size: 5.5rem;
@@ -363,7 +366,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    height: 50%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -458,7 +461,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 375px;
-    padding: 20px;
+    padding: 10px;
+    height: auto;
   }
   .year25 {
     width: 100%;
@@ -526,7 +530,7 @@
     height: clamp(4.25rem, 4.25vw, 6.8rem);
   }
   .element-top-right {
-    max-width: clamp(55px, 8vw, 60px);
+    max-width: clamp(65px, 8vw, 70px);
     top: 10%;
     right: 3%;
   }
@@ -550,7 +554,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 375px;
-    padding: 20px;
+    padding: 0px;
+    height: auto;
+    
   }
   .year25 {
     width: 100%;
@@ -616,7 +622,7 @@
     height: clamp(4.25rem, 4.25vw, 6.8rem);
   }
   .element-top-right {
-    max-width: clamp(55px, 8vw, 60px);
+    max-width: clamp(70px, 8vw, 80px);
     top: 10%;
     right: 3%;
   }
@@ -708,7 +714,7 @@
     height: clamp(4.25rem, 4.25vw, 6.8rem);
   }
   .element-top-right {
-    max-width: clamp(55px, 8vw, 60px);
+    max-width: clamp(70px, 8vw, 80px);
     top: 10%;
     right: 3%;
   }
