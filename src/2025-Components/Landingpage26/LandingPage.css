@@ -26,8 +26,8 @@
 body {
   background: var(--bg);
   font-family: 'Inter', sans-serif;
-  overflow: hidden;
-  height: 100vh;
+  /* FIX 1: Removed overflow: hidden and height: 100vh — these were blocking all scrolling */
+  overflow-x: hidden; /* only block horizontal overflow */
   cursor: auto;
 }
 
@@ -35,7 +35,7 @@ body {
 .landing-wrapper {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh; /* FIX 2: min-height instead of height so content can grow */
   background-image: url("../../Images/trivera_landing_bg(new).png");
   background-size: cover;
   background-position: center;
@@ -44,7 +44,8 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  overflow: hidden;
+  /* FIX 3: Removed overflow: hidden — was trapping scroll inside wrapper */
+  overflow: visible;
   padding-left: 64px;
   z-index: 10;
 }
@@ -91,7 +92,6 @@ body {
   max-width: 756px;
   width: 100%;
   padding: 0 24px;
-  
 }
 
 .hero-heading {
@@ -109,7 +109,6 @@ body {
   user-select: none;
   pointer-events: none;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
-  /* default size for plain emoji characters */
   font-size: clamp(1.4rem, 2.5vw, 2.2rem);
 }
 
@@ -121,7 +120,7 @@ body {
   object-fit: contain;
 }
 
-/* ── Scattered positions — image cutouts (need explicit px/vw size) ── */
+/* ── Scattered positions — image cutouts ── */
 
 /* cutout4 — top right */
 .emoji-auto {
@@ -259,7 +258,7 @@ body {
   letter-spacing: 0;
   transition: transform 0.2s, box-shadow 0.2s;
   will-change: transform;
- font-family: 'coolvetica', sans-serif;
+  font-family: 'coolvetica', sans-serif;
   white-space: nowrap;
 }
 
@@ -391,41 +390,36 @@ body {
 @media (max-width: 1024px) {
   .emoji-coffee { right: 4%; }
   .emoji-globe  { right: 12%; }
-  .emoji-auto { 
-    top: 130px;
-    right: 12px;
-    width: clamp(400px, 6vw, 600px); 
-    height: clamp(400px, 6vw, 600px);
-    z-index: 50;
-  }
 
   .emoji-auto { 
     top: 120px;
     right: 45px;
-    width: clamp(460px, 6vw, 600px); 
-    height: clamp(460px, 6vw, 600px);
+    /* FIX 4: clamp min was 460px on a ~768-1024px screen — reduced to reasonable size */
+    width: clamp(350px, 40vw, 500px); 
+    height: clamp(350px, 40vw, 500px);
     z-index: 50;
   }
-  .shape-layer{
+  .shape-layer {
     top: 5%;
     right: -5%;
-    width: clamp(650px, 30vw, 700px);
-    height: clamp(650px, 30vw, 700px);
+    /* FIX 5: clamp min was 650px — reduced so it doesn't overflow viewport */
+    width: clamp(400px, 50vw, 650px);
+    height: clamp(400px, 50vw, 650px);
     z-index: 1;
   }
   .shape-layer img {
-  width: 90%;
-  height: 90%;
-  object-fit: cover;
-  object-position: center;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    object-position: center;
   }
-
 }
-/* 
-@media (max-width: 900px) {
+
+@media (max-width: 768px) {
   body {
-    cursor: auto;
+    /* FIX 6: Ensure body scroll is enabled on mobile */
     overflow-y: auto;
+    overflow-x: hidden;
     height: auto;
   }
 
@@ -433,41 +427,20 @@ body {
   .cursor-follower { display: none; }
 
   .landing-wrapper {
-    height: auto;
+    padding: 90px 0 80px;
     min-height: 100vh;
-    padding: 80px 0 60px;
-    overflow: visible;
+    height: auto;
   }
 
-  .emoji-auto { 
-    top: 90px;
-    right: 12px;
-    width: clamp(360px, 6vw, 600px); 
-    height: clamp(360px, 6vw, 600px);
-    z-index: 50;
-  }
-
-  .sticker-chaos   { top: auto; bottom: 8%; left: 4%; }
-  .sticker-horn    { top: 8%;   right: 3%; }
-  .sticker-loading { top: 6%;   left: 20%; }
-
-  .emoji-rocket { top: 8%;    left: 4%; }
-
-  
-  .emoji-auto { top: 4%;    right: 3%;  width: clamp(70px, 9vw, 110px); height: clamp(70px, 9vw, 110px); }
-  .emoji-coffee { bottom: 8%; right: 3%;  width: clamp(80px, 10vw, 120px); height: clamp(80px, 10vw, 120px); }
-  .emoji-globe  { top: 48%;   right: 3%;  width: clamp(70px, 8vw, 100px); height: clamp(70px, 8vw, 100px); }
-} */
-
-@media (max-width: 768px) {
-  .landing-wrapper { padding: 90px 0 80px; }
-  .hero-content    { padding: 0 24px; }
+  .hero-content { padding: 0 24px; }
 
   .hero-line-1,
   .hero-line-2,
   .hero-line-3 { 
     font-size: clamp(42px, 12vw, 72px);
     line-height: 1.15;
+    /* FIX 7: Removed white-space: nowrap — was causing hero text to overflow screen width */
+    white-space: normal;
   }
 
   .hero-subtext { 
@@ -480,26 +453,27 @@ body {
   .sticker-loading { display: none; }
   .sticker-chaos   { bottom: 8%; left: 50%; top: auto; transform: translateX(-50%); }
 
-  /* Auto PNG repositioned to avoid navbar overlap */
   .emoji-auto { 
     top: 90px;
     right: 12px;
-    width: clamp(360px, 6vw, 600px); 
-    height: clamp(360px, 6vw, 600px);
+    /* FIX 8: clamp min was 360px on 768px screen — still too wide, reduced */
+    width: clamp(200px, 45vw, 350px); 
+    height: clamp(200px, 45vw, 350px);
     z-index: 50;
   }
-  .shape-layer{
+  .shape-layer {
     top: 0%;
-    right: -15%;
-    width: clamp(600px, 30vw, 700px);
-    height: clamp(600px, 30vw, 700px);
+    right: -10%;
+    /* FIX 9: clamp min was 600px on 768px screen — overflows, reduced */
+    width: clamp(300px, 55vw, 550px);
+    height: clamp(300px, 55vw, 550px);
     z-index: 1;
   }
   .shape-layer img {
-  width: 80%;
-  height: 80%;
-  object-fit: cover;
-  object-position: center;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .emoji-coffee { 
@@ -510,7 +484,7 @@ body {
   }
 
   .btn-register,
-  .btn-explore  { 
+  .btn-explore { 
     max-width: 100%;
     font-size: clamp(13px, 3vw, 16px);
     padding: 12px 20px;
@@ -530,7 +504,7 @@ body {
     background-image: url("../../Images/mobile_bg.png");
   }
 
-  .hero-content    { 
+  .hero-content { 
     padding: 0;
     max-width: 100%;
   }
@@ -538,7 +512,8 @@ body {
   .hero-line-1,
   .hero-line-2,
   .hero-line-3 { 
-    font-size: clamp(36px, 10vw, 60px);
+    font-size: clamp(48px, 13vw, 68px);
+    white-space: normal; /* FIX 10: ensure no overflow on small screens */
   }
 
   .hero-subtext { 
@@ -553,26 +528,25 @@ body {
     padding: 6px 10px;
   }
 
-  /* Auto PNG more compact on mobile */
   .emoji-auto { 
-    top: 120px;
-    right: 10px;
-    width: clamp(300px, 15vw, 300px); 
-    height: clamp(300px, 15vw, 300px);
+    top: 38%;
+    right: -5px;
+    width: 280px; 
+    height: 280px;
   }
 
-  .shape-layer{
-    top: -5%;
-    right: -25%;
-    width: clamp(600px, 30vw, 500px);
-    height: clamp(600px, 30vw, 500px);
+  .shape-layer {
+    top: 30%;
+    right: -15%;
+    width: 340px;
+    height: 340px;
     z-index: 1;
   }
   .shape-layer img {
-  width: 70%;
-  height: 70%;
-  object-fit: cover;
-  object-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
   }
 
   .emoji-coffee { 
@@ -583,7 +557,7 @@ body {
   }
 
   .btn-register,
-  .btn-explore  { 
+  .btn-explore { 
     max-width: 100%;
     font-size: clamp(12px, 2.8vw, 14px);
     padding: 10px 16px;
@@ -592,7 +566,6 @@ body {
 }
 
 @media (max-width: 480px) {
-  
   .landing-wrapper { 
     width: 100%;
     padding: 85px 0 50px;
@@ -601,47 +574,51 @@ body {
   }
 
   .hero-heading {
-    margin-bottom: 340px;
-    margin-left: 25%;
-    margin-top: -10%;
+    /* Removed margin-left: 25% — was pushing text off screen */
+    margin-bottom: 280px;
+    margin-left: 0;
+    margin-top: 0;
   }
 
   .hero-line-1,
   .hero-line-2,
   .hero-line-3 { 
-    font-size: clamp(60px, 9vw, 50px);
-    line-height: 1.1;
-    white-space: nowrap ;
+    /* Big, bold, wide — fills most of the screen width */
+    font-size: clamp(52px, 14vw, 68px);
+    line-height: 1.05;
+    white-space: normal;
+    letter-spacing: 0.01em;
   }
 
   .hero-subtext { 
-    font-size: clamp(12px, 3vw, 15px);
+    font-size: clamp(13px, 3.2vw, 15px);
     margin: 12px 0;
     line-height: 1.5;
   }
 
-  /* Auto PNG smaller on small phones */
+  /* Bus emoji — large, positioned right-center of screen */
   .emoji-auto { 
-    top: 340px;
-    right: 55px;
-    width: clamp(250px, 15vw, 90px); 
-    height: clamp(250px, 15vw, 90px);
-
+    top: 38%;
+    right: -5px;
+    width: 260px; 
+    height: 260px;
+    z-index: 50;
   }
 
-  .shape-layer{
-    top: 20%;
-    right: -30%;
-    width: clamp(600px, 30vw, 500px);
-    height: clamp(600px, 30vw, 500px);
+  /* Pattern sits exactly behind the bus — same anchor point */
+  .shape-layer {
+    top: 30%;
+    right: -18%;
+    width: 320px;
+    height: 320px;
     z-index: 1;
   }
   .shape-layer img {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  object-position: center;
-}
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
 
   .emoji-coffee { 
     bottom: 12%; 
@@ -651,7 +628,7 @@ body {
   }
 
   .btn-register,
-  .btn-explore  { 
+  .btn-explore { 
     max-width: 100%;
     font-size: 12px;
     padding: 10px 14px;
@@ -659,9 +636,7 @@ body {
   }
 }
 
-
 @media (max-width: 375px) {
-  
   .landing-wrapper { 
     padding: 85px 0 50px;
     padding-left: 20px;
@@ -669,18 +644,19 @@ body {
   }
 
   .hero-heading {
-    margin-top: -80px;
-    margin-bottom: 300px;
-    margin-left: 8px;
-    text-align: center;
+    margin-top: 0;
+    margin-bottom: 260px;
+    margin-left: 0;
+    text-align: left;
   }
 
   .hero-line-1,
   .hero-line-2,
   .hero-line-3 { 
-    font-size: clamp(60px, 9vw, 50px);
-    line-height: 1.1;
-    white-space: nowrap;
+    font-size: clamp(48px, 13vw, 62px);
+    line-height: 1.05;
+    white-space: normal;
+    letter-spacing: 0.01em;
   }
 
   .hero-subtext { 
@@ -689,29 +665,29 @@ body {
     line-height: 1.5;
   }
 
-  /* Auto PNG smaller on small phones */
+  /* Bus — large, anchored to right side */
   .emoji-auto { 
-    top: 35%;
-    right: 8%;
-    width: clamp(250px, 15vw, 90px); 
-    height: clamp(250px, 15vw, 90px);
-
-
+    top: 36%;
+    right: -5px;
+    width: 240px; 
+    height: 240px;
+    z-index: 50;
   }
 
-  .shape-layer{
-    top: 15%;
-    right: -45%;
-    width: clamp(600px, 30vw, 500px);
-    height: clamp(600px, 30vw, 500px);
+  /* Pattern exactly behind bus — same top/right anchor */
+  .shape-layer {
+    top: 28%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
     z-index: 1;
   }
   .shape-layer img {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  object-position: center;
-}
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
 
   .emoji-coffee { 
     bottom: 12%; 
@@ -721,7 +697,7 @@ body {
   }
 
   .btn-register,
-  .btn-explore  { 
+  .btn-explore { 
     max-width: 100%;
     font-size: 14px;
     padding: 10px 14px;
